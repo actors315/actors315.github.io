@@ -4,6 +4,7 @@ title: '【PHP高级特性】之反射'
 date: 2018-01-24T17:45:26+08:00  
 excerpt: 'PHP5 开始提供了完整的反射API。有反射类（ReflectionClass）和反射函数（ReflectionFunction）等，功能大同小异，这里主要以ReflectionClass为列说明。
 '  
+key: 'fd30f52ee9a50cc4452c0bef9c4d5e31'  
 ---  
 
 PHP5 开始提供了完整的反射API。有反射类（ReflectionClass）和反射函数（ReflectionFunction）等，功能大同小异，这里主要以ReflectionClass为列说明。

@@ -7,6 +7,7 @@ set_time_limit(0);
 
 // 省略取文件路径的过程，这里直接是文件完整路径
 $filePath = get_save_path'  
+key: 'bbad12cd63d599383d387ce0d13f9b63'  
 ---  
 
 先上一段代码，支持大文件下载和断点续传,代码来源互联网。

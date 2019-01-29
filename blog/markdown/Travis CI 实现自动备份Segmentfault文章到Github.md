@@ -5,6 +5,7 @@ date: 2019-01-18T01:09:17+08:00
 excerpt: '上一篇简单介绍了 Travis CI, 这里再简单介绍一个应用，利用Travis CI的Cron Jobs功能，实现自动备份segmentfault文章到Github。
 第一步：抓取文章内容
 Segm'  
+key: '13ee9e07ce28d6310eb5fec64404fa24'  
 ---  
 
 [上一篇](https://segmentfault.com/a/1190000017891810)简单介绍了 Travis CI, 这里再简单介绍一个应用，利用Travis CI的Cron Jobs功能，实现自动备份segmentfault文章到Github。
