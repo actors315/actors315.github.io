@@ -1,5 +1,19 @@
-<hr class="post-list__divider " />
 
 <nav class="pagination" role="navigation">
+    {% for member in site.data.blogList %}
+
+    {% if member.key == page.key %}
+
+    {% if member.prev %}
+    <a class="previous pagination__newer btn btn-small btn-tertiary" href="">&larr; {{ page.prev }}</a>
+    {% endif %}
+
+    {% if page.next %}
+    <a class="next pagination__older btn btn-small btn-tertiary" href="">{{ page.next }} &rarr;</a>
+    {% endif %}
+
+    {% endif %}
+
+    {% endfor %}
 
 </nav>

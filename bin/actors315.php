@@ -37,6 +37,7 @@ foreach ($entryList as $entry) {
             'title' => $entry['title'],
             'published' => strtotime($entry['published']),
             'updated' => $list[$localSign]['updated'],
+            'key' => $sign,
         ];
         unset($list[$localSign]);
     } elseif (empty($list[$sign])) {
@@ -44,6 +45,7 @@ foreach ($entryList as $entry) {
             'title' => $entry['title'],
             'published' => strtotime($entry['published']),
             'updated' => $entry['updated'],
+            'key' => $sign,
         ];
         $tempFile = __DIR__ . "/../blog/markdown/{$entry['title']}.md";
         $tempDesc = mb_substr(preg_replace("/<[^>]+>/", '', trim($entry['summary'])), 0, 100);
@@ -52,6 +54,7 @@ foreach ($entryList as $entry) {
         file_put_contents($tempFile, "title: '{$entry['title']}'  ".PHP_EOL,FILE_APPEND);
         file_put_contents($tempFile, "date: {$entry['published']}  ".PHP_EOL,FILE_APPEND);
         file_put_contents($tempFile, "excerpt: '{$tempDesc}'  ".PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, "key: '{$sign}'  ".PHP_EOL,FILE_APPEND);
         file_put_contents($tempFile, '---  '.PHP_EOL,FILE_APPEND);
         file_put_contents($tempFile, PHP_EOL,FILE_APPEND);
         $content = $filter->filterImg(trim($entry['summary']),'blog/');
@@ -64,12 +67,15 @@ foreach ($entryList as $entry) {
         file_put_contents($tempFile, "title: '{$entry['title']}'  ".PHP_EOL,FILE_APPEND);
         file_put_contents($tempFile, "date: {$entry['published']}  ".PHP_EOL,FILE_APPEND);
         file_put_contents($tempFile, "excerpt: '{$tempDesc}'  ".PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, "key: '{$sign}'  ".PHP_EOL,FILE_APPEND);
         file_put_contents($tempFile, '---  '.PHP_EOL,FILE_APPEND);
         file_put_contents($tempFile, PHP_EOL,FILE_APPEND);
 
         $list[$sign]['updated'] = $entry['updated'];
         $content = $filter->filterImg(trim($entry['summary']),'blog/');
         file_put_contents($tempFile, $converter->convert($content),FILE_APPEND);
+    } elseif (empty($list[$sign]['key'])) {
+        $list[$sign]['key'] = $sign;
     }
 }
 
@@ -101,17 +107,23 @@ foreach ($fileList as $key => $time) {
         'title' => $key,
         'published' => $time,
         'updated' => $time,
+        'key' => $sign
     ];
 }
 
+file_put_contents(__DIR__ . "/../blog/files/data.json", json_encode($list));
+
+$list = array_values($list);
 $published = array_column($list, 'published');
 array_multisort($published, SORT_DESC, $list);
 
-file_put_contents(__DIR__ . "/../blog/files/data.json", json_encode($list));
-
 // 写目录
-$file = __DIR__ . "/../blog/README.md";
-file_put_contents($file, "# 我的博客  ");
+$file = __DIR__ . "/../blog/index.md";
+file_put_contents($file, '---  '.PHP_EOL);
+file_put_contents($file, 'layout: list ', FILE_APPEND);
+file_put_contents($file, 'title: 我的博客 ', FILE_APPEND);
+file_put_contents($file, '---  '.PHP_EOL, FILE_APPEND);
+
 file_put_contents($file, PHP_EOL . PHP_EOL, FILE_APPEND);
 file_put_contents($file, '同步自segmentfault(https://segmentfault.com/blog/actors315)  ', FILE_APPEND);
 file_put_contents($file, PHP_EOL . PHP_EOL, FILE_APPEND);

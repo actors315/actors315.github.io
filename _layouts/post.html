@@ -1,5 +1,6 @@
 ---
 layout: default
+key: {{ page.key }}
 ---
 
 <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
@@ -22,5 +23,7 @@ layout: default
 
   </section>
 </article>
+
+{% include pagination.html %}
 
 {% include comments.html %}

@@ -7,8 +7,6 @@
  */
 define('ROOT_PATH', dirname(__DIR__));
 
-$list = json_decode(file_get_contents(__DIR__ . "/../blog/files/data.json"), true);
-
 // 写目录
 $file = __DIR__ . "/../README.md";
 file_put_contents($file, "# 我的博客  ");
@@ -26,9 +24,19 @@ file_put_contents($file, PHP_EOL . PHP_EOL, FILE_APPEND);
 file_put_contents($file, "## 目录  ", FILE_APPEND);
 file_put_contents($file, PHP_EOL, FILE_APPEND);
 
+$list = json_decode(file_get_contents(__DIR__ . "/../blog/files/data.json"), true);
+$list = array_values($list);
+$published = array_column($list, 'published');
+array_multisort($published, SORT_DESC, $list);
+
+$fileData = __DIR__ . "/../_data/blogList.yml";
+file_put_contents($fileData,'');
+
 foreach ($list as $item) {
     file_put_contents($file, "- [{$item['title']}](/blog/markdown/" . str_replace(' ','%20',$item['title']) . ".md)", FILE_APPEND);
     file_put_contents($file, PHP_EOL, FILE_APPEND);
+
+    file_put_contents($fileData," - key: {$item['key']}".PHP_EOL,FILE_APPEND);
 }
 
 file_put_contents($file, PHP_EOL . PHP_EOL, FILE_APPEND);
@@ -40,6 +48,10 @@ file_put_contents($file, "## 目录  ", FILE_APPEND);
 file_put_contents($file, PHP_EOL, FILE_APPEND);
 
 $list = json_decode(file_get_contents(__DIR__ . "/../essay/files/data.json"), true);
+$list = array_values($list);
+$published = array_column($list, 'published');
+array_multisort($published, SORT_DESC, $list);
+
 
 foreach ($list as $item) {
     file_put_contents($file, "- [{$item['title']}](/essay/markdown/" . str_replace(' ','%20',$item['title']) . ".md)", FILE_APPEND);
