@@ -1,0 +1,39 @@
+<section class="footer">
+    <footer>
+        <div class="footer_div">
+            <nav class="cover-navigation navigation--social">
+                <ul class="navigation">
+
+                    {% for item in site.contact %}
+                    <li class="navigation__item_social">
+                        <a href="{{item.url}}" title="{{item.title}}" target="_blank">
+                            <div class="footer-social-icon" style="background:url({{item.icon}});"></div>
+                        </a>
+                    </li>
+                    {% endfor %}
+
+                    {% if site.rss %}
+                    <!-- RSS -->
+                    <li class="navigation__item_social">
+                        <a href="/feed.xml" rel="author" title="RSS" target="_blank">
+                            <div class="footer-social-icon" style="background:url(/assets/images/rss.png);"></div>
+                            <span class="label">RSS</span>
+                        </a>
+                    </li>
+                    {% endif %}
+
+                </ul>
+            </nav>
+
+        </div>
+
+        <div class="footer_div">
+            <p class="copyright text-muted">
+                Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }} Theme by <a href="http://baixin.io/">leopardpan</a>
+            </p>
+            <div align="right">
+
+            </div>
+        </div>
+    </footer>
+</section>

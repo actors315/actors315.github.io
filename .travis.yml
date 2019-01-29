@@ -1,0 +1,50 @@
+language: php
+php:
+  - '7.2'
+
+# 项目所在分支
+branches:
+  only:
+  - master
+
+# 配置环境
+before_install:
+  # 替换为刚才生成的解密信息
+  - openssl aes-256-cbc -K $encrypted_79258127fb87_key -iv $encrypted_79258127fb87_iv -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
+  # 改变文件权限
+  - chmod 600 ~/.ssh/id_rsa
+  # 配置 ssh
+  - eval "$(ssh-agent -s)"
+  - ssh-add ~/.ssh/id_rsa
+  - cp .travis/ssh_config ~/.ssh/config
+  # 配置 git 替换为自己的信息
+  - git config --global user.name 'actors315'
+  - git config --global user.email actors315@gmail.com
+  # 用 ssh 方法提交
+  - git remote set-url origin git@github.com:actors315/actors315.github.io.git
+  # 切换到提交的目的分支
+  - git checkout master
+
+install:
+  - composer install --prefer-dist --optimize-autoloader --quiet
+
+script:
+  - php -f bin/actors315.php
+  - php -f bin/readme.php
+
+after_success:
+  - git add README.md
+  - git add ./blog/*
+  - git add ./essay/*
+  # 这里很重要，commit message 一定要填加 [skip travis] , 不然可能会进入死循环，一直在提交一直在自动构建
+  - git commit -m "[skip travis] auto build by travis-ci"
+  - git push origin master
+
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_ACCESS_TOKEN
+  target-branch: gh-pages
+  keep-history: true
+  on:
+    branch: master

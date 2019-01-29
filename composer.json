@@ -1,0 +1,16 @@
+{
+  "name": "actors315/actors315.github.io",
+  "description": "我的博客",
+  "require": {
+    "league/html-to-markdown": "^4.8",
+    "guzzlehttp/guzzle": "^6.3"
+  },
+  "require-dev": {
+
+  },
+  "autoload": {
+    "psr-4": {
+      "app\\": "application/"
+    }
+  }
+}
