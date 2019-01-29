@@ -1,7 +1,6 @@
----
-layout: list
-title: 我的博客
----
+---  
+layout: list title: 我的博客 ---  
+
 
 同步自segmentfault(https://segmentfault.com/blog/actors315)  
 
