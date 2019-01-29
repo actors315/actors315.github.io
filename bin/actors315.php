@@ -120,7 +120,7 @@ array_multisort($published, SORT_DESC, $list);
 // 写目录
 $file = __DIR__ . "/../blog/index.md";
 file_put_contents($file, '---  '.PHP_EOL);
-file_put_contents($file, 'layout: list ', FILE_APPEND);
+file_put_contents($file, 'layout: list '.PHP_EOL, FILE_APPEND);
 file_put_contents($file, 'title: 我的博客 '.PHP_EOL, FILE_APPEND);
 file_put_contents($file, '---  '.PHP_EOL, FILE_APPEND);
 
