@@ -1,3 +1,12 @@
+---  
+layout: post  
+title: '【PHP高级特性】ArrayAccess 接口'  
+date: 2018-11-22T18:04:03+08:00  
+excerpt: 'php提供了6个常用的预定义接口，实现某些特定的能力。其中最最常用的就是 ArrayAccess 了，像 Laravel 这种流行的框架都用到了它。
+ArrayAccess 是啥
+如官方文档所述，它“'  
+---  
+
 php提供了6个常用的预定义接口，实现某些特定的能力。其中最最常用的就是 ArrayAccess 了，像 Laravel 这种流行的框架都用到了它。
 
 **ArrayAccess 是啥**

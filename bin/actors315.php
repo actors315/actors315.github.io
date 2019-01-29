@@ -45,12 +45,31 @@ foreach ($entryList as $entry) {
             'published' => strtotime($entry['published']),
             'updated' => $entry['updated'],
         ];
+        $tempFile = __DIR__ . "/../blog/markdown/{$entry['title']}.md";
+        $tempDesc = mb_substr(preg_replace("/<[^>]+>/", '', trim($entry['summary'])), 0, 100);
+        file_put_contents($tempFile, '---  '.PHP_EOL);
+        file_put_contents($tempFile, 'layout: post  '.PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, "title: '{$entry['title']}'  ".PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, "date: {$entry['published']}  ".PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, "excerpt: '{$tempDesc}'  ".PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, '---  '.PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, PHP_EOL,FILE_APPEND);
         $content = $filter->filterImg(trim($entry['summary']),'blog/');
-        file_put_contents(__DIR__ . "/../blog/markdown/{$entry['title']}.md", $converter->convert($content));
+        file_put_contents($tempFile, $converter->convert($content),FILE_APPEND);
     } elseif ($entry['updated'] > $list[$sign]['updated']) {
+        $tempFile = __DIR__ . "/../blog/markdown/{$entry['title']}.md";
+        $tempDesc = mb_substr(preg_replace("/<[^>]+>/", '', trim($entry['summary'])), 0, 100);
+        file_put_contents($tempFile, '---  '.PHP_EOL);
+        file_put_contents($tempFile, 'layout: post  '.PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, "title: '{$entry['title']}'  ".PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, "date: {$entry['published']}  ".PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, "excerpt: '{$tempDesc}'  ".PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, '---  '.PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, PHP_EOL,FILE_APPEND);
+
         $list[$sign]['updated'] = $entry['updated'];
         $content = $filter->filterImg(trim($entry['summary']),'blog/');
-        file_put_contents(__DIR__ . "/../blog/markdown/{$entry['title']}.md", $converter->convert($content));
+        file_put_contents($tempFile, $converter->convert($content),FILE_APPEND);
     }
 }
 

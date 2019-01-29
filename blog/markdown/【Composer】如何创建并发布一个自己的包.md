@@ -1,3 +1,15 @@
+---  
+layout: post  
+title: '【Composer】如何创建并发布一个自己的包'  
+date: 2018-04-04T17:10:13+08:00  
+excerpt: '上一篇【Composer】简单介绍 
+现在来说一说如何创建并发布一个自己的包，以这个简单的服务化类库 twinkle/twinkle-api 为例，也作个简单说明。
+有哪些步骤
+
+编写代码
+编写com'  
+---  
+
 上一篇[【Composer】简单介绍](https://segmentfault.com/a/1190000013984336)
 
 现在来说一说如何创建并发布一个自己的包，以这个简单的服务化类库 [twinkle/twinkle-api](https://github.com/TwinklePHP/Twinkle.git) 为例，也作个简单说明。
