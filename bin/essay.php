@@ -8,7 +8,7 @@
 define('ROOT_PATH', dirname(__DIR__));
 
 
-$list = json_decode(file_get_contents(__DIR__ . "/../blog/files/data.json"), true);
+$list = json_decode(file_get_contents(__DIR__ . "/../_essay/files/data.json"), true);
 
 $fileList = [];
 $rootPath = __DIR__ . '/../_essay/markdown/';

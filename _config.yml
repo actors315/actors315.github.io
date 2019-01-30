@@ -13,7 +13,7 @@ authorList:
 
 nav:
     - {title: 技术博客, description: blog, url: '/blog/'}
-    - {title: 心情随笔, description: essay, url: '/essay/'}
+    - {title: 心情随笔, description: essay, url: '/essay'}
     - {title: 关于我, description: about, url: '/about'}
 
 rss: false
