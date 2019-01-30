@@ -1,0 +1,14 @@
+---
+layout: list
+title: 我的博客
+---
+
+<p>同步自segmentfault(https://segmentfault.com/blog/actors315)</p>
+
+<h2 id="目录">目录</h2>
+
+<ul>
+    {% for member in site.data.blogList %}
+    <li><a href="./markdown/{{ member.title }}">{{ member.title }}</a></li>
+    {% endfor %}
+</ul>

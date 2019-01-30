@@ -130,27 +130,5 @@ foreach ($fileList as $key => $time) {
 
 file_put_contents(__DIR__ . "/../blog/files/data.json", json_encode($list));
 
-$list = array_values($list);
-$published = array_column($list, 'published');
-array_multisort($published, SORT_DESC, $list);
-
-// 写目录
-$file = __DIR__ . "/../blog/index.md";
-file_put_contents($file, '---  '.PHP_EOL);
-file_put_contents($file, 'layout: list '.PHP_EOL, FILE_APPEND);
-file_put_contents($file, 'title: 我的博客 '.PHP_EOL, FILE_APPEND);
-file_put_contents($file, '---  '.PHP_EOL, FILE_APPEND);
-
-file_put_contents($file, PHP_EOL . PHP_EOL, FILE_APPEND);
-file_put_contents($file, '同步自segmentfault(https://segmentfault.com/blog/actors315)  ', FILE_APPEND);
-file_put_contents($file, PHP_EOL . PHP_EOL, FILE_APPEND);
-
-file_put_contents($file, "## 目录  ", FILE_APPEND);
-file_put_contents($file, PHP_EOL . PHP_EOL, FILE_APPEND);
-foreach ($list as $item) {
-    file_put_contents($file, "- [{$item['title']}](./markdown/" . $item['title'] . ".md)", FILE_APPEND);
-    file_put_contents($file, PHP_EOL, FILE_APPEND);
-}
-
 echo "done", PHP_EOL;
 
