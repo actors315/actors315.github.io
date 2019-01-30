@@ -34,6 +34,7 @@ script:
 
 after_success:
   - git add README.md
+  - git add ./_data/*
   - git add ./blog/*
   - git add ./essay/*
   # 这里很重要，commit message 一定要填加 [skip travis] , 不然可能会进入死循环，一直在提交一直在自动构建
