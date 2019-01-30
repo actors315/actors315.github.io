@@ -5,11 +5,11 @@
     {% if member.key == page.key %}
 
     {% if member.prev %}
-    <a class="previous pagination__newer btn btn-small btn-tertiary" href="">&larr; {{ page.prev }}</a>
+    <a class="previous pagination__newer btn btn-small btn-tertiary" href="{{ member.path}}{{ member.prev }}">&larr; {{ member.prev }}</a>
     {% endif %}
 
-    {% if page.next %}
-    <a class="next pagination__older btn btn-small btn-tertiary" href="">{{ page.next }} &rarr;</a>
+    {% if member.next %}
+    <a class="next pagination__older btn btn-small btn-tertiary" href="{{ member.path}}{{ member.next }}">{{ member.next }} &rarr;</a>
     {% endif %}
 
     {% endif %}

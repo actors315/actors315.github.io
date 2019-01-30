@@ -54,7 +54,7 @@ foreach ($entryList as $entry) {
         file_put_contents($tempFile, "title: '{$entry['title']}'  ".PHP_EOL,FILE_APPEND);
         file_put_contents($tempFile, "date: {$entry['published']}  ".PHP_EOL,FILE_APPEND);
         file_put_contents($tempFile, "excerpt: '{$tempDesc}'  ".PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, "key: '{$sign}'  ".PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, "key: $sign  ".PHP_EOL,FILE_APPEND);
         file_put_contents($tempFile, '---  '.PHP_EOL,FILE_APPEND);
         file_put_contents($tempFile, PHP_EOL,FILE_APPEND);
         $content = $filter->filterImg(trim($entry['summary']),'blog/');
@@ -67,7 +67,7 @@ foreach ($entryList as $entry) {
         file_put_contents($tempFile, "title: '{$entry['title']}'  ".PHP_EOL,FILE_APPEND);
         file_put_contents($tempFile, "date: {$entry['published']}  ".PHP_EOL,FILE_APPEND);
         file_put_contents($tempFile, "excerpt: '{$tempDesc}'  ".PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, "key: '{$sign}'  ".PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, "key: $sign  ".PHP_EOL,FILE_APPEND);
         file_put_contents($tempFile, '---  '.PHP_EOL,FILE_APPEND);
         file_put_contents($tempFile, PHP_EOL,FILE_APPEND);
 
@@ -109,6 +109,23 @@ foreach ($fileList as $key => $time) {
         'updated' => $time,
         'key' => $sign
     ];
+
+    $tempFile = $rootPath.$key.'.md';
+    $tempTime = date('Y-m-d H:i:s',$time);
+    $content = file_get_contents($tempFile);
+    if (strpos($content, 'layout: post') === false) {
+        $tempDesc = mb_substr(preg_replace("/<[^>]+>/", '', trim($content)), 0, 100);
+        file_put_contents($tempFile, '---  '.PHP_EOL);
+        file_put_contents($tempFile, 'layout: post  '.PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, "title: '{$key}'  ".PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, "date: {$tempTime}  ".PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, "excerpt: '{$tempDesc}'  ".PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, "key: $sign  ".PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, '---  '.PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, PHP_EOL,FILE_APPEND);
+
+        file_put_contents($tempFile, $content, FILE_APPEND);
+    }
 }
 
 file_put_contents(__DIR__ . "/../blog/files/data.json", json_encode($list));
@@ -131,7 +148,7 @@ file_put_contents($file, PHP_EOL . PHP_EOL, FILE_APPEND);
 file_put_contents($file, "## 目录  ", FILE_APPEND);
 file_put_contents($file, PHP_EOL . PHP_EOL, FILE_APPEND);
 foreach ($list as $item) {
-    file_put_contents($file, "- [{$item['title']}](/markdown/" . $item['title'] . ".md)", FILE_APPEND);
+    file_put_contents($file, "- [{$item['title']}](./markdown/" . $item['title'] . ".md)", FILE_APPEND);
     file_put_contents($file, PHP_EOL, FILE_APPEND);
 }
 
