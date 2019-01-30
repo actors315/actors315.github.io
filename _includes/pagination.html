@@ -1,5 +1,7 @@
 
 <nav class="pagination" role="navigation">
+    {% if page.type == 'blogList' %}
+
     {% for member in site.data.blogList %}
 
     {% if member.key == page.key %}
@@ -15,5 +17,7 @@
     {% endif %}
 
     {% endfor %}
+
+    {% endif %}
 
 </nav>

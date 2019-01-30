@@ -23,5 +23,10 @@ contact:
     - {title: '@橙子橙子我是大头', url: 'https://weibo.com/tiancaidatou', icon: '/assets/images/weibo.png' }
     - {title: '@actors315 的邮箱', url: 'mailto:actors315@gmail.com', icon: '/assets/images/email.png' }
 
+collections:
+    essay:
+        output: true
+
+plugins: [jekyll-paginate]
 paginate: 5
 paginate_path: "page:num"

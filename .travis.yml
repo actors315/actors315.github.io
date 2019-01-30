@@ -30,6 +30,7 @@ install:
 
 script:
   - php -f bin/actors315.php
+  - php -f bin/essay.php
   - php -f bin/readme.php
 
 after_success:

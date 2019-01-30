@@ -1,0 +1,14 @@
+---
+layout: list
+title: 心情随笔
+---
+
+<p>睛中有世界 心中有天地</p>
+
+<h2 id="目录">目录</h2>
+
+<ul>
+    {% for post in site.essay %}
+    <li><a href="/essay/markdown/{{ post.title }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
