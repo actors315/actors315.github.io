@@ -9,6 +9,8 @@ Github Pages 是 Github 免费提供的静态网站生成器，你可以利用�
 key: fe8b62d662e430f0f5bc9305030f260d  
 ---  
 
+{% raw %}
+
 **Github Pages**
 
 Github Pages 是 Github **免费**提供的静态网站生成器，你可以利用其创建个人、企业、项目网站。其提供静态页面托管服务和一个二级域名，也可以绑定独立域名。
@@ -39,8 +41,6 @@ paginate_path: "essay/page:num" # 可选，分页链接
 然后在 index.html 直接写上如下代码就会自动生成分页目录
 
 ```
-{% raw % }
-
 <ul>
     {% for post in paginator.posts %}
     <li><a href="{{ post.url }}">{{ post.title }}</a></li>
@@ -56,8 +56,6 @@ paginate_path: "essay/page:num" # 可选，分页链接
     <a class="next pagination__older btn btn-small btn-tertiary" href="{{ paginator.next_page_path }}">下一页 &rarr;</a>
     {% endif %}
 </nav>
-
-{% endraw % }
 
 ```
 
@@ -98,7 +96,6 @@ jekyll 会自动生成如下目录
 在子目录另外定义一个 page.html 模板文件
 
 ```
-{% raw % }
 ---
 layout: list
 type: customList
@@ -119,7 +116,6 @@ next_page_path: none
     {% endfor %}
 </ul>
 
-{% endraw % }
 ```
 
 利用 data 的逻辑处理能力手动实现，然后 php 自动任务手动生成和 jekyll 自助目录同样的结构。
@@ -174,3 +170,5 @@ for ($i = 1; $i <= $totalPage; $i++) {
 这样就徒手实现了一个分页功能，并且可以根据自己的需要随心所欲，你的分页你作主。
 
 详细实现可参考我的Github 页面 [呜啦啦的碎碎念](https://github.com/actors315/actors315.github.io)
+
+{% endraw %}

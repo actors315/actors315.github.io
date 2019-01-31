@@ -42,12 +42,3 @@ after_success:
   - git commit -m "[skip travis] auto build by travis-ci"
   - git push origin master
 
-deploy:
-  provider: pages
-  skip-cleanup: true
-  keep-history: true
-  github-token: $GITHUB_ACCESS_TOKEN
-  target-branch: gh-pages
-  local_dir: _site/
-  on:
-    branch: master
