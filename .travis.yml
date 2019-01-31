@@ -45,8 +45,9 @@ after_success:
 deploy:
   provider: pages
   skip-cleanup: true
+  keep-history: true
   github-token: $GITHUB_ACCESS_TOKEN
   target-branch: gh-pages
-  keep-history: true
+  local_dir: _site/
   on:
     branch: master
