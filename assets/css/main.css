@@ -259,6 +259,7 @@ td:last-child {
   margin-top: 20px;
   float:left
 }
+
 .pager li>a{
   width:100%;
   padding: 10px 10px;  
@@ -772,14 +773,16 @@ img::-moz-selection {
     font-size: 1.7em; 
   }
   .pagination {
-    display: block;
-    margin: 0 0 4em 0; 
+    position: relative;
+    margin: 0 0 2em 0;
   }
 
   .pagination__page-number {
-    margin: 0;
+    float: left;
+    margin-top: 20px;
     font-size: .8em;
-    color: #999999; 
+    color: #999999;
+    padding: 5px;
   }
 
   .pagination__newer {

@@ -54,7 +54,7 @@ file_put_contents($file, PHP_EOL . PHP_EOL, FILE_APPEND);
 file_put_contents($file, "## 目录  ", FILE_APPEND);
 file_put_contents($file, PHP_EOL, FILE_APPEND);
 
-$list = json_decode(file_get_contents(__DIR__ . "/../_essay/files/data.json"), true);
+$list = json_decode(file_get_contents(__DIR__ . "/../_posts/files/data.json"), true);
 $list = array_values($list);
 $published = array_column($list, 'published');
 array_multisort($published, SORT_DESC, $list);
