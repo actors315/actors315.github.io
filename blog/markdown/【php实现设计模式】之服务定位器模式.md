@@ -1,5 +1,6 @@
 ---  
 layout: post  
+type: blog  
 title: '【php实现设计模式】之服务定位器模式'  
 date: 2017-06-24T11:04:55+08:00  
 excerpt: '什么是服务定位器

@@ -49,31 +49,33 @@ foreach ($entryList as $entry) {
         ];
         $tempFile = __DIR__ . "/../blog/markdown/{$entry['title']}.md";
         $tempDesc = mb_substr(preg_replace("/<[^>]+>/", '', trim($entry['summary'])), 0, 100);
-        file_put_contents($tempFile, '---  '.PHP_EOL);
-        file_put_contents($tempFile, 'layout: post  '.PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, "title: '{$entry['title']}'  ".PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, "date: {$entry['published']}  ".PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, "excerpt: '{$tempDesc}'  ".PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, "key: $sign  ".PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, '---  '.PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, PHP_EOL,FILE_APPEND);
-        $content = $filter->filterImg(trim($entry['summary']),'blog/');
-        file_put_contents($tempFile, $converter->convert($content),FILE_APPEND);
+        file_put_contents($tempFile, '---  ' . PHP_EOL);
+        file_put_contents($tempFile, 'layout: post  ' . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, 'type: blog  ' . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, "title: '{$entry['title']}'  " . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, "date: {$entry['published']}  " . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, "excerpt: '{$tempDesc}'  " . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, "key: $sign  " . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, '---  ' . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, PHP_EOL, FILE_APPEND);
+        $content = $filter->filterImg(trim($entry['summary']), 'blog/');
+        file_put_contents($tempFile, $converter->convert($content), FILE_APPEND);
     } elseif ($entry['updated'] > $list[$sign]['updated']) {
         $tempFile = __DIR__ . "/../blog/markdown/{$entry['title']}.md";
         $tempDesc = mb_substr(preg_replace("/<[^>]+>/", '', trim($entry['summary'])), 0, 100);
-        file_put_contents($tempFile, '---  '.PHP_EOL);
-        file_put_contents($tempFile, 'layout: post  '.PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, "title: '{$entry['title']}'  ".PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, "date: {$entry['published']}  ".PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, "excerpt: '{$tempDesc}'  ".PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, "key: $sign  ".PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, '---  '.PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, '---  ' . PHP_EOL);
+        file_put_contents($tempFile, 'layout: post  ' . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, 'type: blog  ' . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, "title: '{$entry['title']}'  " . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, "date: {$entry['published']}  " . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, "excerpt: '{$tempDesc}'  " . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, "key: $sign  " . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, '---  ' . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, PHP_EOL, FILE_APPEND);
 
         $list[$sign]['updated'] = $entry['updated'];
-        $content = $filter->filterImg(trim($entry['summary']),'blog/');
-        file_put_contents($tempFile, $converter->convert($content),FILE_APPEND);
+        $content = $filter->filterImg(trim($entry['summary']), 'blog/');
+        file_put_contents($tempFile, $converter->convert($content), FILE_APPEND);
     } elseif (empty($list[$sign]['key'])) {
         $list[$sign]['key'] = $sign;
     }
@@ -110,22 +112,66 @@ foreach ($fileList as $key => $time) {
         'key' => $sign
     ];
 
-    $tempFile = $rootPath.$key.'.md';
-    $tempTime = date('Y-m-d H:i:s',$time);
+    $tempFile = $rootPath . $key . '.md';
+    $tempTime = date('Y-m-d H:i:s', $time);
     $content = file_get_contents($tempFile);
     if (strpos($content, 'layout: post') === false) {
         $tempDesc = mb_substr(preg_replace("/<[^>]+>/", '', trim($content)), 0, 100);
-        file_put_contents($tempFile, '---  '.PHP_EOL);
-        file_put_contents($tempFile, 'layout: post  '.PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, "title: '{$key}'  ".PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, "date: {$tempTime}  ".PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, "excerpt: '{$tempDesc}'  ".PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, "key: $sign  ".PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, '---  '.PHP_EOL,FILE_APPEND);
-        file_put_contents($tempFile, PHP_EOL,FILE_APPEND);
+        file_put_contents($tempFile, '---  ' . PHP_EOL);
+        file_put_contents($tempFile, 'layout: post  ' . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, 'type: blog  ' . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, "title: '{$key}'  " . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, "date: {$tempTime}  " . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, "excerpt: '{$tempDesc}'  " . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, "key: $sign  " . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, '---  ' . PHP_EOL, FILE_APPEND);
+        file_put_contents($tempFile, PHP_EOL, FILE_APPEND);
 
         file_put_contents($tempFile, $content, FILE_APPEND);
     }
+}
+
+$totalCount = count($list);
+$totalPage = ceil($totalCount / 20);
+
+for ($i = 1; $i <= $totalPage; $i++) {
+    if ($i == 1) {
+        $tempFile = __DIR__ . "/../blog/index.html";
+    } else {
+        $tempFile = __DIR__ . "/../blog/page{$i}/index.html";
+    }
+
+    $newPage = false;
+    if (file_exists($tempFile)) {
+        $tempContent = file_get_contents($tempFile);
+    } else {
+        $tempContent = file_get_contents(__DIR__ . "/../blog/page.html");
+        $newPage = true;
+        if (!is_dir($dir = dirname($tempFile))) {
+            mkdir($dir, 0777, true);
+        }
+    }
+    $tempContent = preg_replace('/page:[\s]*\d+[^\d]/', "page: {$i}" . PHP_EOL, $tempContent);
+    $tempContent = preg_replace('/total_pages:[\s]*\d+[^\d]/', "total_pages: {$totalPage}" . PHP_EOL, $tempContent);
+    if ($i == 2) {
+        $tempContent = preg_replace('/prev_page_path:[\s]*[^\s]+[\s]*?/', "prev_page_path: /blog/", $tempContent);
+    } elseif ($i > 2) {
+        $prev = $i - 1;
+        $tempContent = preg_replace('/prev_page_path:[\s]*[^\s]+[\s]*?/', "prev_page_path: /blog/page{$prev}/", $tempContent);
+    }
+
+    if ($i < $totalPage) {
+        $next = $i + 1;
+        $tempContent = preg_replace('/next_page_path:[\s]*[^\s]+[\s]*?/', "next_page_path: /blog/page{$next}/", $tempContent);
+    } elseif ($i == $totalPage) {
+        $tempContent = preg_replace('/next_page_path:[\s]*[^\s]+[\s]*?/', "next_page_path: none", $tempContent);
+    }
+
+    if ($newPage) {
+        $tempContent = str_replace('#offset#', ($i - 1) * 20, $tempContent);
+    }
+
+    file_put_contents($tempFile, $tempContent);
 }
 
 file_put_contents(__DIR__ . "/../blog/files/data.json", json_encode($list));

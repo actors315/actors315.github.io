@@ -1,5 +1,6 @@
 ---  
 layout: post  
+type: blog  
 title: 'PHP实现一个轻量级容器'  
 date: 2019-01-27T21:16:38+08:00  
 excerpt: '什么是容器

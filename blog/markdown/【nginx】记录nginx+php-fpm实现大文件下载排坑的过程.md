@@ -1,5 +1,6 @@
 ---  
 layout: post  
+type: blog  
 title: '【nginx】记录nginx+php-fpm实现大文件下载排坑的过程'  
 date: 2018-08-01T09:26:53+08:00  
 excerpt: '先上一段代码，支持大文件下载和断点续传,代码来源互联网。

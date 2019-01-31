@@ -1,6 +1,6 @@
 
 <nav class="pagination" role="navigation">
-    {% if page.type == 'blogList' %}
+    {% if page.type == 'blog' %}
 
     {% for member in site.data.blogList %}
 
@@ -28,6 +28,18 @@
     <span class="page_num pagination__page-number">{{ paginator.page }} / {{ paginator.total_pages }}</span>
     {% if paginator.next_page %}
     <a class="next pagination__older btn btn-small btn-tertiary" href="{{ paginator.next_page_path }}">下一页 &rarr;</a>
+    {% endif %}
+
+    {% endif %}
+
+    {% if page.type == 'customList' %}
+
+    {% if page.prev_page_path and page.prev_page_path != 'none' %}
+    <a class="previous pagination__newer btn btn-small btn-tertiary" href="{{ page.prev_page_path }}">&larr; 上一页</a>
+    {% endif %}
+    <span class="page_num pagination__page-number">{{ page.page }} / {{ page.total_pages }}</span>
+    {% if page.next_page_path and page.next_page_path != 'none' %}
+    <a class="next pagination__older btn btn-small btn-tertiary" href="{{ page.next_page_path }}">下一页 &rarr;</a>
     {% endif %}
 
     {% endif %}

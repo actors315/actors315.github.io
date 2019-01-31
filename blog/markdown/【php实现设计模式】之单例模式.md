@@ -1,5 +1,6 @@
 ---  
 layout: post  
+type: blog  
 title: '【php实现设计模式】之单例模式'  
 date: 2018-01-30T18:51:42+08:00  
 excerpt: '单例模式是最常用，也是最简单的一种设计模式。

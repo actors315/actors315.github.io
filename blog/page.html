@@ -3,7 +3,7 @@ layout: list
 type: customList
 title: 我的博客
 page: 1
-total_pages: 1
+total_pages: 100
 prev_page_path: none
 next_page_path: none
 ---
@@ -13,8 +13,8 @@ next_page_path: none
 <h2 id="目录">目录</h2>
 
 <ul>
-    {% for member in site.data.blogList limit:20 %}
-    <li><a href="./markdown/{{ member.title }}">{{ member.title }}</a></li>
+    {% for member in site.data.blogList limit:20 offset:#offset# %}
+    <li><a href="/blog/markdown/{{ member.title }}">{{ member.title }}</a></li>
     {% endfor %}
 </ul>
 

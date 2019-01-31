@@ -1,5 +1,6 @@
 ---  
 layout: post  
+type: blog  
 title: '【php实现数据结构】链式队列'  
 date: 2019-01-05T12:01:14+08:00  
 excerpt: '什么是链式队列

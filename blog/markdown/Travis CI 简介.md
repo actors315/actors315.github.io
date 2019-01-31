@@ -1,5 +1,6 @@
 ---  
 layout: post  
+type: blog  
 title: 'Travis CI 简介'  
 date: 2019-01-14T22:46:32+08:00  
 excerpt: '什么是Travis CI

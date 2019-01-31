@@ -1,5 +1,6 @@
 ---  
 layout: post  
+type: blog  
 title: '【Composer】简单介绍'  
 date: 2018-03-26T11:30:31+08:00  
 excerpt: 'Composer 是什么

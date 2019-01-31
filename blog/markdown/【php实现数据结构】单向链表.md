@@ -1,5 +1,6 @@
 ---  
 layout: post  
+type: blog  
 title: '【php实现数据结构】单向链表'  
 date: 2019-01-04T19:55:52+08:00  
 excerpt: '什么是单向链表
