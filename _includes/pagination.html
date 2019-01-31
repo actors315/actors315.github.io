@@ -44,11 +44,12 @@
 
     {% endif %}
 
-    {% if page.previous.url %}
-    <a class="previous pagination__newer btn btn-small btn-tertiary" href="{{ page.previous.url }}">&larr; 下一篇：{{page.previous.title}}</a>
-    {% endif %}
     {% if page.next.url %}
     <a class="previous pagination__newer btn btn-small btn-tertiary" href="{{ page.next.url }}">&larr; 上一篇：{{page.next.title}}</a>
+    {% endif %}
+
+    {% if page.previous.url %}
+    <a class="next pagination__newer btn btn-small btn-tertiary" href="{{ page.previous.url }}">&larr; 下一篇：{{page.previous.title}}</a>
     {% endif %}
 
 </nav>
