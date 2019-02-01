@@ -1432,3 +1432,14 @@ nav a {
   transform: translateY(-3px);
 }
 /*导航按钮-end*/
+
+/* about */
+.about .social-icon {
+  margin-bottom: 20px;
+}
+
+.about .icon {
+  float: left;
+  margin-right: 10px;
+  border-radius: 15px;
+}
