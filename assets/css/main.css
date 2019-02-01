@@ -245,6 +245,10 @@ td:last-child {
   border: 1px solid #363636;
 }
 
+.strong {
+  font-weight: bold;
+}
+
 /*pager start----------------*/
 .post-container 
 .pager li{ 
@@ -739,7 +743,7 @@ img::-moz-selection {
     position: relative;
     width: 100%;
     border-color: #666;
-    color: #666;
+    color: #333;
     /*opacity: .8; */
   }
 

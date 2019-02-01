@@ -1,7 +1,8 @@
-author: '呜啦啦 & 碎碎念'
+author: '乌啦啦 & 碎碎念'
 title: 呜啦啦的碎碎念
 subtitle: 眼中有世界，心中有天地
 description: 心有猛虎，细嗅蔷薇
+welcome_message: 欢迎来到我的个人站~
 baidu_analytics: a505b5ee255ed40e25e240605e8b588b
 repository_url: https://github.com/actors315/actors315.github.io
 avatarTitle: actors315
@@ -12,9 +13,9 @@ authorList:
     Aimme: 碎碎念
 
 nav:
-    - {title: 技术博客, description: blog, url: '/blog/'}
-    - {title: 心情随笔, description: essay, url: '/essay/'}
-    - {title: 关于我, description: about, url: '/about'}
+    - {title: 技术博客, description: '乌啦啦的碎碎念', url: '/blog/'}
+    - {title: 心情随笔, description: '心情随笔', url: '/essay/'}
+    - {title: 关于我, description: '关于我', url: '/about'}
 
 rss: false
 
