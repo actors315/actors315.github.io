@@ -519,8 +519,10 @@ img::-moz-selection {
     font-size: 0.6em;
     font-weight: lighter;
     letter-spacing: 3px;
-    color: #CCCCCC;
-    -webkit-font-smoothing: antialiased; }
+    color: #666;
+    -webkit-font-smoothing: antialiased;
+    line-height: 20px;
+  }
 
   .panel-cover {
     display: block;
