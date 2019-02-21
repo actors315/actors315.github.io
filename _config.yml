@@ -26,6 +26,11 @@ contact:
 
 exclude: ["application","bin","vendor","blog/page.html"]
 
-plugins: [jekyll-paginate]
+plugins: [jekyll-paginate,jekyll-sitemap]
 paginate: 20
 paginate_path: "essay/page:num"
+defaults:
+  scope:
+    path: "google119f7a85c4f8f713.html"
+  values:
+    sitemap: false

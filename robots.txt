@@ -3,5 +3,4 @@ Disallow: /bin/
 Disallow: /_*/
 Disallow: /assets/
 
-Sitemap: https://blog.xiehuanjin.cn/blog/sitemap.xml
-Sitemap: https://blog.xiehuanjin.cn/essay/sitemap.xml
+Sitemap: https://blog.xiehuanjin.cn/sitemap.xml
