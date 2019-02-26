@@ -7,6 +7,7 @@
 同步自segmentfault(https://segmentfault.com/blog/actors315)  
 
 ## 目录  
+- [windows 使用 zephir 开发 PHP 扩展](/blog/markdown/windows%20使用%20zephir%20开发%20PHP%20扩展.md)
 - [【PHP 扩展开发】Zephir 简介](/blog/markdown/【PHP%20扩展开发】Zephir%20简介.md)
 - [【Github Pages】如何被百度收录](/blog/markdown/【Github%20Pages】如何被百度收录.md)
 - [【Github Pages】徒手实现分页](/blog/markdown/【Github%20Pages】徒手实现分页.md)
