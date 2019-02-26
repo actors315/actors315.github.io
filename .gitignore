@@ -3,3 +3,4 @@
 /.travis/id_rsa
 /composer.lock
 /_site
+/tmp
