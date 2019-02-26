@@ -59,21 +59,9 @@ $list = array_values($list);
 $published = array_column($list, 'published');
 array_multisort($published, SORT_DESC, $list);
 
-$fileData = __DIR__ . "/../_data/essayList.yml";
-file_put_contents($fileData, '');
-
 foreach ($list as $key => $item) {
     $title = preg_replace('/^\d{4}-\d{2}-\d{2}-/', '', $item['title']);
     file_put_contents($file, "- [{$title}](/_posts/" . str_replace(' ', '%20', $item['title']) . ".md)" . PHP_EOL, FILE_APPEND);
-
-    file_put_contents($fileData, " - key: {$item['key']}" . PHP_EOL, FILE_APPEND);
-    file_put_contents($fileData, "   title: {$item['title']}" . PHP_EOL, FILE_APPEND);
-    if (!empty($list[$key - 1])) {
-        file_put_contents($fileData, "   prev: {$list[$key-1]['title']}" . PHP_EOL, FILE_APPEND);
-    }
-    if (!empty($list[$key + 1])) {
-        file_put_contents($fileData, "   next: {$list[$key+1]['title']}" . PHP_EOL, FILE_APPEND);
-    }
 }
 
 
