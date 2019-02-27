@@ -61,7 +61,7 @@ array_multisort($published, SORT_DESC, $list);
 
 foreach ($list as $key => $item) {
     $title = preg_replace('/^\d{4}-\d{2}-\d{2}-/', '', $item['title']);
-    file_put_contents($file, "- [{$title}](/_posts/" . $item['filename'] . PHP_EOL, FILE_APPEND);
+    file_put_contents($file, "- [{$title}](/_posts/{$item['filename']})"  . PHP_EOL, FILE_APPEND);
 }
 
 

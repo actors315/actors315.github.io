@@ -23,17 +23,25 @@ if (!empty($handler)) {
 }
 
 foreach ($list as $key => $item) {
-    // 清理掉已经不存在的文件
-    if (!isset($fileList[$item['title']]) && (empty($item['filename']) || !file_exists(ROOT_PATH . '/_posts/' . $item['filename']))) {
-        unset($list[$key]);
+    if (!empty($item['filename'])) {
+        $filename = substr($item['filename'], 0, -3);
+        if (!file_exists(ROOT_PATH . '/_posts/' . $item['filename'])) {
+            unset($list[$key]);
+        }
+    } else {
+        $filename = $item['title'];
+        if (!isset($fileList[$filename])) {
+            unset($list[$key]);
+        }
     }
-    unset($fileList[$item['title']]);
+    unset($fileList[$filename]);
 }
 
 $filenameTransfer = new \app\components\Filename();
 
 foreach ($fileList as $key => $time) {
     $sign = md5($key . 'local');
+    preg_match('/^\d{4}-\d{2}-\d{2}/', $key, $match);
     $list[$sign] = [
         'title' => $key,
         'published' => $time,
