@@ -14,7 +14,7 @@ next_page_path: none
 
 <ul>
     {% for member in site.data.blogList limit:20 offset:#offset# %}
-    <li><a href="/blog/markdown/{{ member.title }}">{{ member.title }}</a></li>
+    <li><a href="/blog/markdown/{{ member.filename }}">{{ member.title }}</a></li>
     {% endfor %}
 </ul>
 

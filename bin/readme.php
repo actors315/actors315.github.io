@@ -38,6 +38,7 @@ foreach ($list as $key => $item) {
 
     file_put_contents($fileData, " - key: {$item['key']}" . PHP_EOL, FILE_APPEND);
     file_put_contents($fileData, "   title: {$item['title']}" . PHP_EOL, FILE_APPEND);
+    file_put_contents($fileData, "   filename: " . substr($item['filename'], 0, -3) . PHP_EOL, FILE_APPEND);
     if (!empty($list[$key - 1])) {
         file_put_contents($fileData, "   prev: " . PHP_EOL, FILE_APPEND);
         file_put_contents($fileData, "      title: {$list[$key-1]['title']}" . PHP_EOL, FILE_APPEND);
