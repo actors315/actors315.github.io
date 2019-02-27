@@ -24,7 +24,7 @@ if (!empty($handler)) {
 
 foreach ($list as $key => $item) {
     // 清理掉已经不存在的文件
-    if (!isset($fileList[$item['title']])) {
+    if (!isset($fileList[$item['title']]) && (empty($item['filename']) || !file_exists(ROOT_PATH . '/_posts/' . $item['filename']))) {
         unset($list[$key]);
     }
     unset($fileList[$item['title']]);
@@ -52,7 +52,7 @@ foreach ($fileList as $key => $time) {
             $transName = true;
         }
     }
-    $list[$sign]['filename'] = str_replace($rootPath,'',$tempFile);
+    $list[$sign]['filename'] = str_replace($rootPath, '', $tempFile);
 
     if (strpos($content, 'layout: post') === false) {
 
@@ -97,7 +97,7 @@ foreach ($list as $key => $item) {
             unlink($tempFile);
             $tempFile = $rootPath . $filename . '.md';
             file_put_contents($tempFile, $content, FILE_APPEND);
-            $list[$key]['filename'] = str_replace($rootPath,'',$tempFile);
+            $list[$key]['filename'] = str_replace($rootPath, '', $tempFile);
         }
     }
 }
