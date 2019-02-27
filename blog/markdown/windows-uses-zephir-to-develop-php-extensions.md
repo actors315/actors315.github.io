@@ -12,7 +12,7 @@ key: 9b0e75f4497a42e1d461649990bdb4c2
 
 **windows软件准备**
 
-wamp 集成环境，扩展安装 php5.6.40 （也可以用编译安装的目录 php.exe） ，教程>>><https://blog.csdn.net/u011242029/article/details/80058770>
+wamp 集成环境，扩展安装 php5.6.40（也可以用编译安装的目录 php.exe），教程 >><https://blog.csdn.net/u011242029/article/details/80058770>
 
 php-sdk-binary-tools-20110915.zip （http://windows.php.net/downloads/php-sdk/ 下载）
 
@@ -119,7 +119,7 @@ C:\php-sdk\phpdev\
 解压到C:\php-sdk\phpdev\vc11\x86\php-5.6.40文件夹中。
 ```
 
-下载安装 [php\_zephir\_parser.dll](https://github.com/phalcon/php-zephir-parser/releases/tag/v1.1.1)，下载已编译好的ts 版本 zephir\_parser\_x86\_vc11\_php5.5\_1.1.1-268.zip
+下载安装 [php\\zephir\\_parser.dll](https://github.com/phalcon/php-zephir-parser/releases/tag/v1.1.1)，下载已编译好的ts 版本 zephir\_parser\_x86\_vc11\_php5.5\_1.1.1-268.zip
 
 [也可以自己编译安装 ](https://github.com/phalcon/php-zephir-parser/blob/1.1.x/README.WIN32-BUILD-SYSTEM)
 
