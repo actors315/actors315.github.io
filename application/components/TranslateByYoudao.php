@@ -9,27 +9,31 @@
 namespace app\components;
 
 
-class TranslateByYoudao
+use app\base\HttpRequest;
+
+class TranslateByYoudao extends HttpRequest
 {
 
-    const API_URL = 'https://openapi.youdao.com/api';
+    const API_URL = 'https://openapi.youdao.com';
+    const API_URI = '/api';
     const APP_KEY = '32c97dfa2b5ebc4a';
 
     /**
      * 中文转英文
      *
      * @param $text
+     * @return string | false
      */
     public function zh2en($text)
     {
         $salt = uniqid();
         $nowTime = time();
         $input = $text;
-        if (($len = strlen($text)) > 20) {
-            $input = substr($text, 0, 10) . $len . substr($text, -10);
+        if (($len = mb_strlen($text)) > 20) {
+            $input = mb_substr($text, 0, 10) . $len . mb_substr($text, $len - 10, $len);
         }
 
-        $data = [
+        $param = [
             'q' => $text,
             'from' => 'zh-CHS',
             'to' => 'en',
@@ -39,7 +43,12 @@ class TranslateByYoudao
             'signType' => 'v3',
             'curtime' => $nowTime,
         ];
-        
+        $response = $this->send(self::API_URI, ['form_params' => $param], self::API_URL);
+        if (0 == $response['errorCode']) {
+            return array_shift($response['translation']);
+        }
+
+        return false;
     }
 
 }

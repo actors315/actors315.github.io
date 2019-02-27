@@ -29,9 +29,9 @@ install:
   - composer install --prefer-dist --optimize-autoloader --quiet
 
 script:
-  - php -f bin/actors315.php
-  - php -f bin/essay.php
-  - php -f bin/readme.php
+  - php -f bin/actors315.php $YOUDAO_SECRET
+  - php -f bin/essay.php $YOUDAO_SECRET
+  - php -f bin/readme.php $YOUDAO_SECRET
 
 after_success:
   - git add README.md

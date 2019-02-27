@@ -5,8 +5,7 @@
  * Date: 2019/1/10
  * Time: 0:32
  */
-define('ROOT_PATH', dirname(__DIR__));
-
+require 'cli.php';
 
 $list = json_decode(file_get_contents(__DIR__ . "/../_posts/files/data.json"), true);
 
@@ -28,9 +27,10 @@ foreach ($list as $key => $item) {
     if (!isset($fileList[$item['title']])) {
         unset($list[$key]);
     }
-
     unset($fileList[$item['title']]);
 }
+
+$filenameTransfer = new \app\components\Filename();
 
 foreach ($fileList as $key => $time) {
     $sign = md5($key . 'local');
@@ -43,6 +43,17 @@ foreach ($fileList as $key => $time) {
     $tempFile = $rootPath . $key . '.md';
     $tempTime = date('Y-m-d H:i:s', $time);
     $content = trim(file_get_contents($tempFile));
+
+    $transName = false;
+    if (preg_match("/[\x{4e00}-\x{9fa5}]+/u", $key)) {
+        if ($filename = $filenameTransfer->generateUrl($key)) {
+            unlink($tempFile);
+            $tempFile = $rootPath . $filename . '.md';
+            $transName = true;
+        }
+    }
+    $list[$sign]['filename'] = str_replace($rootPath,'',$tempFile);
+
     if (strpos($content, 'layout: post') === false) {
 
         file_put_contents($tempFile, '---  ' . PHP_EOL);
@@ -50,8 +61,8 @@ foreach ($fileList as $key => $time) {
 
         // 标题
         preg_match('/---[\s\S]*title:[\s]*([^\s]+)[\s\S]*---/', $content, $match);
-        if(!empty($match[1])) {
-            $title = trim($match[1],"'");
+        if (!empty($match[1])) {
+            $title = trim($match[1], "'");
         } else {
             $title = preg_replace('/^\d{4}-\d{2}-\d{2}-/', '', $key);
         }
@@ -59,21 +70,35 @@ foreach ($fileList as $key => $time) {
 
         // 作者
         preg_match('/---[\s\S]*author:[\s]*([^\s]+)[\s\S]*---/', $content, $match);
-        if(!empty($match[1])) {
-            $match[1] = trim($match[1],"'");
+        if (!empty($match[1])) {
+            $match[1] = trim($match[1], "'");
             file_put_contents($tempFile, "author: '{$match[1]}'  " . PHP_EOL, FILE_APPEND);
         }
         file_put_contents($tempFile, "date: {$tempTime}  " . PHP_EOL, FILE_APPEND);
 
-        $content = trim(preg_replace('/---[\s\S]+---/','',$content));
+        $content = trim(preg_replace('/---[\s\S]+---/', '', $content));
         $tempDesc = mb_substr(preg_replace("/<[^>]+>/", '', $content), 0, 100);
         file_put_contents($tempFile, "excerpt: '{$tempDesc}'  " . PHP_EOL, FILE_APPEND);
         file_put_contents($tempFile, "key: $sign  " . PHP_EOL, FILE_APPEND);
         file_put_contents($tempFile, '---  ' . PHP_EOL, FILE_APPEND);
         file_put_contents($tempFile, PHP_EOL, FILE_APPEND);
 
-
         file_put_contents($tempFile, $content, FILE_APPEND);
+    } elseif ($transName) {
+        file_put_contents($tempFile, $content, FILE_APPEND);
+    }
+}
+
+foreach ($list as $key => $item) {
+    $tempFile = $rootPath . $item['title'] . '.md';
+    if (empty($item['filename']) || preg_match("/[\x{4e00}-\x{9fa5}]+/u", $item['title'])) {
+        if ($filename = $filenameTransfer->generateUrl($item['title'])) {
+            $content = trim(file_get_contents($tempFile));
+            unlink($tempFile);
+            $tempFile = $rootPath . $filename . '.md';
+            file_put_contents($tempFile, $content, FILE_APPEND);
+            $list[$key]['filename'] = str_replace($rootPath,'',$tempFile);
+        }
     }
 }
 

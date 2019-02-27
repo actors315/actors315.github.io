@@ -5,11 +5,7 @@
  * Date: 2019/1/10
  * Time: 0:32
  */
-define('ROOT_PATH', dirname(__DIR__));
-
-define('YOUDAO_SECRET', isset($argv[2]) ? $argv[2] : '');
-
-require __DIR__ . "/../vendor/autoload.php";
+require 'cli.php';
 
 $list = json_decode(file_get_contents(__DIR__ . "/../blog/files/data.json"), true);
 

@@ -6,7 +6,7 @@
  * Time: 13:56
  */
 
-require __DIR__ . "/../vendor/autoload.php";
+require 'cli.php';
 
 $content = file_get_contents('../tmp/travis.html');
 

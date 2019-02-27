@@ -5,7 +5,7 @@
  * Date: 2019/1/10
  * Time: 0:32
  */
-define('ROOT_PATH', dirname(__DIR__));
+require 'cli.php';
 
 // 写目录
 $file = __DIR__ . "/../README.md";
@@ -61,7 +61,7 @@ array_multisort($published, SORT_DESC, $list);
 
 foreach ($list as $key => $item) {
     $title = preg_replace('/^\d{4}-\d{2}-\d{2}-/', '', $item['title']);
-    file_put_contents($file, "- [{$title}](/_posts/" . str_replace(' ', '%20', $item['title']) . ".md)" . PHP_EOL, FILE_APPEND);
+    file_put_contents($file, "- [{$title}](/_posts/" . $item['filename'] . PHP_EOL, FILE_APPEND);
 }
 
 
