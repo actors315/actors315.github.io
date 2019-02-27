@@ -30,9 +30,8 @@
 ## 心情随笔  
 
 ## 目录  
-- [技术团队知识沉淀怎么做](/_posts/2019-02-20-technical-team-knowledge-precipitation-how-to-do.md
-- [为什么程序员不爱写文档](/_posts/2019-02-19-why-don-t-programmers-love-to-document.md
-- [眼中有天地，心中有力量](/_posts/2019-02-17-heaven-and-earth-are-in-the-eye-strength-is-in-the-heart.md
-- [雨巷](/_posts/2019-01-31-the-rain-lane.md
-- [一棵开花的树](/_posts/2019-01-31-a-flowering-tree.md
-- [做一个对社会有用的人](/_posts/2019-01-30-be-a-useful-person-to-the-society.md
+- [be-a-useful-person-to-the-society](/_posts/2019-01-30-be-a-useful-person-to-the-society.md
+- [a-flowering-tree](/_posts/2019-01-31-a-flowering-tree.md
+- [the-rain-lane](/_posts/2019-01-31-the-rain-lane.md
+- [why-don-t-programmers-love-to-document](/_posts/2019-02-19-why-don-t-programmers-love-to-document.md
+- [technical-team-knowledge-precipitation-how-to-do](/_posts/2019-02-20-technical-team-knowledge-precipitation-how-to-do.md
