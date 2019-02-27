@@ -91,7 +91,7 @@ foreach ($fileList as $key => $time) {
 
 foreach ($list as $key => $item) {
     $tempFile = $rootPath . $item['title'] . '.md';
-    if (empty($item['filename']) || preg_match("/[\x{4e00}-\x{9fa5}]+/u", $item['title'])) {
+    if (empty($item['filename']) || preg_match("/[\x{4e00}-\x{9fa5}]+/u", $item['filename'])) {
         if ($filename = $filenameTransfer->generateUrl($item['title'])) {
             $content = trim(file_get_contents($tempFile));
             unlink($tempFile);
