@@ -30,6 +30,7 @@
 ## 心情随笔  
 
 ## 目录  
+- [技术团队如何做好技术分享](/_posts/2019-02-28-how-do-technical-teams-share-technology.md)
 - [技术团队知识沉淀怎么做](/_posts/2019-02-20-technical-team-knowledge-precipitation-how-to-do.md)
 - [为什么程序员不爱写文档](/_posts/2019-02-19-why-don-t-programmers-love-to-document.md)
 - [眼中有天地，心中有力量](/_posts/2019-02-17-heaven-and-earth-are-in-the-eye-strength-is-in-the-heart.md)
