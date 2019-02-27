@@ -33,16 +33,20 @@ $fileData = __DIR__ . "/../_data/blogList.yml";
 file_put_contents($fileData, '');
 
 foreach ($list as $key => $item) {
-    file_put_contents($file, "- [{$item['title']}](/blog/markdown/" . str_replace(' ', '%20', $item['title']) . ".md)", FILE_APPEND);
+    file_put_contents($file, "- [{$item['title']}](/blog/markdown/{$item['filename']})", FILE_APPEND);
     file_put_contents($file, PHP_EOL, FILE_APPEND);
 
     file_put_contents($fileData, " - key: {$item['key']}" . PHP_EOL, FILE_APPEND);
     file_put_contents($fileData, "   title: {$item['title']}" . PHP_EOL, FILE_APPEND);
     if (!empty($list[$key - 1])) {
-        file_put_contents($fileData, "   prev: {$list[$key-1]['title']}" . PHP_EOL, FILE_APPEND);
+        file_put_contents($fileData, "   prev: " . PHP_EOL, FILE_APPEND);
+        file_put_contents($fileData, "      title: {$list[$key-1]['title']}" . PHP_EOL, FILE_APPEND);
+        file_put_contents($fileData, "      filename: " . substr($list[$key - 1]['filename'], 0, -3) . PHP_EOL, FILE_APPEND);
     }
     if (!empty($list[$key + 1])) {
-        file_put_contents($fileData, "   next: {$list[$key+1]['title']}" . PHP_EOL, FILE_APPEND);
+        file_put_contents($fileData, "   next: " . PHP_EOL, FILE_APPEND);
+        file_put_contents($fileData, "      title: {$list[$key+1]['title']}" . PHP_EOL, FILE_APPEND);
+        file_put_contents($fileData, "      filename: " . substr($list[$key + 1]['filename'], 0, -3) . PHP_EOL, FILE_APPEND);
     }
 }
 
@@ -61,7 +65,7 @@ array_multisort($published, SORT_DESC, $list);
 
 foreach ($list as $key => $item) {
     $title = preg_replace('/^\d{4}-\d{2}-\d{2}-/', '', $item['title']);
-    file_put_contents($file, "- [{$title}](/_posts/{$item['filename']})"  . PHP_EOL, FILE_APPEND);
+    file_put_contents($file, "- [{$title}](/_posts/{$item['filename']})" . PHP_EOL, FILE_APPEND);
 }
 
 

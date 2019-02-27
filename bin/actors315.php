@@ -23,6 +23,8 @@ $entryList = $tempArr['entry'];
 $converter = new \League\HTMLToMarkdown\HtmlConverter();
 $filter = new \app\components\SFArticle();
 
+$filenameTransfer = new \app\components\Filename();
+
 foreach ($entryList as $entry) {
     $entry['id'] = str_replace('https://segmentfault.com/a/', '', $entry['id']);
     $entry['updated'] = strtotime($entry['updated']);
@@ -36,16 +38,19 @@ foreach ($entryList as $entry) {
             'published' => strtotime($entry['published']),
             'updated' => $list[$localSign]['updated'],
             'key' => $sign,
+            'filename' => $list[$localSign]['filename'],
         ];
         unset($list[$localSign]);
     } elseif (empty($list[$sign])) {
+        $filename = $filenameTransfer->generateUrl($entry['title']) . '.md';
         $list[$sign] = [
             'title' => $entry['title'],
             'published' => strtotime($entry['published']),
             'updated' => $entry['updated'],
             'key' => $sign,
+            'filename' => $filename,
         ];
-        $tempFile = __DIR__ . "/../blog/markdown/{$entry['title']}.md";
+        $tempFile = __DIR__ . "/../blog/markdown/{$filename}";
         $tempDesc = mb_substr(preg_replace("/<[^>]+>/", '', trim($entry['summary'])), 0, 100);
         file_put_contents($tempFile, '---  ' . PHP_EOL);
         file_put_contents($tempFile, 'layout: post  ' . PHP_EOL, FILE_APPEND);
@@ -59,7 +64,7 @@ foreach ($entryList as $entry) {
         $content = $filter->filterImg(trim($entry['summary']), 'blog/');
         file_put_contents($tempFile, $converter->convert($content), FILE_APPEND);
     } elseif ($entry['updated'] > $list[$sign]['updated']) {
-        $tempFile = __DIR__ . "/../blog/markdown/{$entry['title']}.md";
+        $tempFile = __DIR__ . "/../blog/markdown/{$list[$sign]['filename']}.md";
         $tempDesc = mb_substr(preg_replace("/<[^>]+>/", '', trim($entry['summary'])), 0, 100);
         file_put_contents($tempFile, '---  ' . PHP_EOL);
         file_put_contents($tempFile, 'layout: post  ' . PHP_EOL, FILE_APPEND);
@@ -93,26 +98,36 @@ if (!empty($handler)) {
 }
 
 foreach ($list as $key => $item) {
-    // 清理掉已经不存在的文件
-    if (!isset($fileList[$item['title']])) {
-        unset($list[$key]);
+    if (!empty($item['filename'])) {
+        $filename = substr($item['filename'], 0, -3);
+        if (!file_exists($rootPath . $item['filename'])) {
+            unset($list[$key]);
+        }
+    } else {
+        $filename = $item['title'];
+        if (!isset($fileList[$filename])) {
+            unset($list[$key]);
+        }
     }
-
-    unset($fileList[$item['title']]);
+    unset($fileList[$filename]);
 }
 
 foreach ($fileList as $key => $time) {
     $sign = md5($key . 'local');
+    $filename = $filenameTransfer->generateUrl($key) . '.md';
     $list[$sign] = [
         'title' => $key,
         'published' => $time,
         'updated' => $time,
-        'key' => $sign
+        'key' => $sign,
+        'filename' => $filename,
     ];
 
     $tempFile = $rootPath . $key . '.md';
     $tempTime = date('Y-m-d H:i:s', $time);
     $content = file_get_contents($tempFile);
+    unlink($tempFile);
+    $tempFile = $rootPath . $filename;
     if (strpos($content, 'layout: post') === false) {
         $tempDesc = mb_substr(preg_replace("/<[^>]+>/", '', trim($content)), 0, 100);
         file_put_contents($tempFile, '---  ' . PHP_EOL);
@@ -126,6 +141,8 @@ foreach ($fileList as $key => $time) {
         file_put_contents($tempFile, PHP_EOL, FILE_APPEND);
 
         file_put_contents($tempFile, $content, FILE_APPEND);
+    } else {
+        file_put_contents($tempFile, $content);
     }
 }
 

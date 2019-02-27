@@ -63,7 +63,6 @@ foreach ($fileList as $key => $time) {
     $list[$sign]['filename'] = str_replace($rootPath, '', $tempFile);
 
     if (strpos($content, 'layout: post') === false) {
-
         file_put_contents($tempFile, '---  ' . PHP_EOL);
         file_put_contents($tempFile, 'layout: post  ' . PHP_EOL, FILE_APPEND);
 
@@ -93,7 +92,7 @@ foreach ($fileList as $key => $time) {
 
         file_put_contents($tempFile, $content, FILE_APPEND);
     } elseif ($transName) {
-        file_put_contents($tempFile, $content, FILE_APPEND);
+        file_put_contents($tempFile, $content);
     }
 }
 
