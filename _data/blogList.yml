@@ -1,6 +1,15 @@
+ - key: 3fb80c0ba68682785f0055d2019186a9
+   title: 【PHP 扩展开发】Zephir 基础篇
+   filename: php-extension-development-zephir-basic-article
+   next: 
+      title: windows 使用 zephir 开发 PHP 扩展
+      filename: windows-uses-zephir-to-develop-php-extensions
  - key: 9b0e75f4497a42e1d461649990bdb4c2
    title: windows 使用 zephir 开发 PHP 扩展
    filename: windows-uses-zephir-to-develop-php-extensions
+   prev: 
+      title: 【PHP 扩展开发】Zephir 基础篇
+      filename: php-extension-development-zephir-basic-article
    next: 
       title: 【PHP 扩展开发】Zephir 简介
       filename: introduction-to-zephir
