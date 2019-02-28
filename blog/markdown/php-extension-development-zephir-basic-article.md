@@ -57,13 +57,18 @@ Zephir 的运算符与 PHP 基本一致。比较运算符在运算时考虑变�
 PHP
 
 ```
-$value = $myArray[$key];
+if (isset($myArray[$key])) {
+    $value = $myArray[$key];
+    echo $value;
+}
 ```
 
 Zephir
 
 ```
-fetch value, myArray[key]
+if fetch value, myArray[key] {
+    echo value;
+}
 ```
 
 **控制结构**  
