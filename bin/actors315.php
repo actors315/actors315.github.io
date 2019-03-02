@@ -42,7 +42,17 @@ foreach ($entryList as $entry) {
         ];
         unset($list[$localSign]);
     } elseif (empty($list[$sign])) {
-        $filename = $filenameTransfer->generateUrl($entry['title']) . '.md';
+        $filename = $filenameTransfer->generateUrl($entry['title']);
+        $tempIndex = 1;
+        while (true) {
+            if (file_exists(__DIR__ . "/../blog/markdown/{$filename}.md")) {
+                $filename .= $tempIndex;
+                $tempIndex++;
+                continue;
+            }
+            break;
+        }
+        $filename .= '.md';
         $list[$sign] = [
             'title' => $entry['title'],
             'published' => strtotime($entry['published']),
@@ -114,7 +124,17 @@ foreach ($list as $key => $item) {
 
 foreach ($fileList as $key => $time) {
     $sign = md5($key . 'local');
-    $filename = $filenameTransfer->generateUrl($key) . '.md';
+    $filename = $filenameTransfer->generateUrl($key);
+    $tempIndex = 1;
+    while (true) {
+        if (file_exists(__DIR__ . "/../blog/markdown/{$filename}.md")) {
+            $filename .= $tempIndex;
+            $tempIndex++;
+            continue;
+        }
+        break;
+    }
+    $filename .= '.md';
     $list[$sign] = [
         'title' => $key,
         'published' => $time,

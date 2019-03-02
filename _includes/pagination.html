@@ -7,11 +7,11 @@
     {% if member.key == page.key %}
 
     {% if member.prev %}
-    <a class="previous pagination__newer btn btn-small btn-tertiary" href="{{ member.prev.filename }}">&larr; {{ member.prev.title }}</a>
+    <a class="previous pagination__newer btn btn-small btn-tertiary" href="{{ member.prev.filename }}">&larr; 上一篇：{{ member.prev.title }}</a>
     {% endif %}
 
     {% if member.next %}
-    <a class="next pagination__older btn btn-small btn-tertiary" href="{{ member.next.filename }}">{{ member.next.title }} &rarr;</a>
+    <a class="next pagination__older btn btn-small btn-tertiary" href="{{ member.next.filename }}">下一篇：{{ member.next.title }} &rarr;</a>
     {% endif %}
 
     {% endif %}
