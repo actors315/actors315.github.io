@@ -2,15 +2,11 @@
 layout: post  
 title: '三只牛吃草,一只羊看花'  
 date: 2019-03-03 15:09:09  
-excerpt: '![clipboard.png](./files/images/2019030301.jpg)
-
-三只牛吃草，一只羊也吃草。一只羊不吃草，它看着花。  
- 
-《开明国语课本》是民国时期由大家叶圣陶编写'  
+excerpt: '三只牛吃草，一只羊也吃草。一只羊不吃草，它看着花。'  
 key: 9ba6e212058b10ba868793599d4e30ed  
 ---  
 
-![clipboard.png](./files/images/2019030301.jpg)
+![clipboard.png](/assets/images/posts/2019030301.jpg)
 
 三只牛吃草，一只羊也吃草。一只羊不吃草，它看着花。  
  
