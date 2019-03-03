@@ -56,7 +56,7 @@ chmod a+x composer
 composer init
 ```
 
-依次为出行如下提示
+依次为出现如下提示
 
 ![composer init](/blog/files/images/418359f28bfa3c95cc6ab56118017d81.jpg "composer init")
 
