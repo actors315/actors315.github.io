@@ -1,6 +1,6 @@
  - key: 784925790878f7df23df805a1dc61a28
    title: 【PHP 扩展开发】Hello World
-   filename: hello-world.-hello-world
+   filename: hello-world-hello-world
    next: 
       title: 【PHP 扩展开发】Zephir 基础篇
       filename: php-extension-development-zephir-basic-article
@@ -9,7 +9,7 @@
    filename: php-extension-development-zephir-basic-article
    prev: 
       title: 【PHP 扩展开发】Hello World
-      filename: hello-world.-hello-world
+      filename: hello-world-hello-world
    next: 
       title: windows 使用 zephir 开发 PHP 扩展
       filename: windows-uses-zephir-to-develop-php-extensions
