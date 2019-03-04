@@ -29,7 +29,7 @@ class Filename
 
         if ($titleEn = $this->translator->zh2en($title)) {
             $titleEn = strtolower($titleEn);
-            $titleEn = str_replace(['&','【','】','[',']'], ' ', $titleEn);
+            $titleEn = str_replace(['&','【','】','[',']','.'], ' ', $titleEn);
             $titleEn = str_replace("'", ' ', $titleEn);
             $titleEn = str_replace(",", ' ', $titleEn);
             $titleEn = preg_replace('/\s+/', ' ', $titleEn);
