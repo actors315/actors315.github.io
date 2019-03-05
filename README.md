@@ -7,6 +7,7 @@
 同步自segmentfault(https://segmentfault.com/blog/actors315)  
 
 ## 目录  
+- [【php 扩展开发】扩展生成器](/blog/markdown/php-extension-development-extension-generator.md)
 - [【PHP 扩展开发】Hello World](/blog/markdown/hello-world-hello-world.md)
 - [【PHP 扩展开发】Zephir 基础篇](/blog/markdown/php-extension-development-zephir-basic-article.md)
 - [windows 使用 zephir 开发 PHP 扩展](/blog/markdown/windows-uses-zephir-to-develop-php-extensions.md)

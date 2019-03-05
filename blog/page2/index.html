@@ -2,10 +2,10 @@
 layout: list
 type: customList
 title: 我的博客
-page: 1
+page: 2
 total_pages: 2
-prev_page_path: none
-next_page_path: /blog/page2/
+prev_page_path: /blog/
+next_page_path: none
 ---
 
 <p>同步自segmentfault(https://segmentfault.com/blog/actors315)</p>
@@ -13,8 +13,8 @@ next_page_path: /blog/page2/
 <h2 id="目录">目录</h2>
 
 <ul>
-    {% for member in site.data.blogList limit:20 %}
-    <li><a href="./markdown/{{ member.filename }}">{{ member.title }}</a></li>
+    {% for member in site.data.blogList limit:20 offset:20 %}
+    <li><a href="/blog/markdown/{{ member.filename }}">{{ member.title }}</a></li>
     {% endfor %}
 </ul>
 
