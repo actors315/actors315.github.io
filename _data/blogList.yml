@@ -175,3 +175,9 @@
    next: 
       title: 【php实现设计模式】之服务定位器模式
       filename: php-implementation-design-pattern-service-locator-pattern
+ - key: b40acbafec88bf4dfda8325ba0e04175
+   title: 【php实现设计模式】之服务定位器模式
+   filename: php-implementation-design-pattern-service-locator-pattern
+   prev: 
+      title: 【PHP高级特性】之反射
+      filename: reflection-of-php-advanced-features
