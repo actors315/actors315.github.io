@@ -14,6 +14,15 @@ title: 关于我
     <p class="strong">一个爱思考的行动者</p>
     <p>感受思考时的宁静，也为实现自己的想法而激动</p>
 
+    <p class="strong">项目推荐</p>
+    <p>
+        {% for item in site.repositories %}
+        <a href="{{item.url}}" title="{{item.description}}" class="btn-mobile-menu__icon">
+            {{item.title}}
+        </a>
+        {% endfor %}
+    </p>
+
     <p class="social-icon">
         <a href="https://github.com/actors315" title="actors315" target="_blank">
             <img src="/assets/images/github.png" class="icon"/>
@@ -23,6 +32,7 @@ title: 关于我
             <img src="/assets/images/segmentfault.png" class="icon"/>
         </a>
     </p>
+    <p></p>
 
     <h3>米饭之家</h3>
     <p>用有趣的话题温暖彼此,<a href="https://mifan.us" target="_blank">点此前往</a></p>
