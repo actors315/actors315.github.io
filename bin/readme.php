@@ -34,8 +34,10 @@ file_put_contents($fileData, '');
 
 $tempCount = 0;
 foreach ($list as $key => $item) {
-    file_put_contents($file, "- [{$item['title']}](/blog/markdown/{$item['filename']})", FILE_APPEND);
-    file_put_contents($file, PHP_EOL, FILE_APPEND);
+    if (++$tempCount <= 20) {
+        file_put_contents($file, "- [{$item['title']}](/blog/markdown/{$item['filename']})", FILE_APPEND);
+        file_put_contents($file, PHP_EOL, FILE_APPEND);
+    }
 
     file_put_contents($fileData, " - key: {$item['key']}" . PHP_EOL, FILE_APPEND);
     file_put_contents($fileData, "   title: {$item['title']}" . PHP_EOL, FILE_APPEND);
@@ -49,9 +51,6 @@ foreach ($list as $key => $item) {
         file_put_contents($fileData, "   next: " . PHP_EOL, FILE_APPEND);
         file_put_contents($fileData, "      title: {$list[$key+1]['title']}" . PHP_EOL, FILE_APPEND);
         file_put_contents($fileData, "      filename: " . substr($list[$key + 1]['filename'], 0, -3) . PHP_EOL, FILE_APPEND);
-    }
-    if(++$tempCount >=20) {
-        break;
     }
 }
 
@@ -72,7 +71,7 @@ $tempCount = 0;
 foreach ($list as $key => $item) {
     $title = preg_replace('/^\d{4}-\d{2}-\d{2}-/', '', $item['title']);
     file_put_contents($file, "- [{$title}](/_posts/{$item['filename']})" . PHP_EOL, FILE_APPEND);
-    if(++$tempCount >=20) {
+    if (++$tempCount >= 20) {
         break;
     }
 }
