@@ -1,6 +1,9 @@
 language: php
 php:
-  - '7.2'
+  - '7.2.16'
+
+env:
+  - YOUDAO_SECRET = $YOUDAO_SECRET
 
 # 项目所在分支
 branches:

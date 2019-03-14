@@ -8,4 +8,6 @@
 define('ROOT_PATH', dirname(__DIR__));
 define('YOUDAO_SECRET', isset($argv[1]) ? $argv[1] : '');
 
+print_r($_SERVER);
+
 require __DIR__ . "/../vendor/autoload.php";
