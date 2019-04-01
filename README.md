@@ -7,6 +7,7 @@
 同步自segmentfault(https://segmentfault.com/blog/actors315)  
 
 ## 目录  
+- [GDB 简介](/blog/markdown/gdb-introduction.md)
 - [【php 扩展开发】扩展生成器](/blog/markdown/php-extension-development-extension-generator.md)
 - [【PHP 扩展开发】Hello World](/blog/markdown/hello-world-hello-world.md)
 - [【PHP 扩展开发】Zephir 基础篇](/blog/markdown/php-extension-development-zephir-basic-article.md)
@@ -26,7 +27,6 @@
 - [【Composer】简单介绍](/blog/markdown/composer-is-briefly-introduced.md)
 - [【微信小程序】根据当前运行环境调用不同的接口地址的一些方法](/blog/markdown/wechat-applet-calls-a-number-of-methods-with-different-interface-addresses-based-on-the-current-operating-environment.md)
 - [【php实现设计模式】之单例模式](/blog/markdown/php-implementation-design-pattern-singleton-pattern.md)
-- [【PHP高级特性】之反射](/blog/markdown/reflection-of-php-advanced-features.md)
 
 
 ## 心情随笔  

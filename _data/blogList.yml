@@ -1,6 +1,15 @@
+ - key: 743469753f7caefded3e8486d0f594a0
+   title: GDB 简介
+   filename: gdb-introduction
+   next: 
+      title: 【php 扩展开发】扩展生成器
+      filename: php-extension-development-extension-generator
  - key: c238a6358cdd7a656dd58325229f27d0
    title: 【php 扩展开发】扩展生成器
    filename: php-extension-development-extension-generator
+   prev: 
+      title: GDB 简介
+      filename: gdb-introduction
    next: 
       title: 【PHP 扩展开发】Hello World
       filename: hello-world-hello-world
