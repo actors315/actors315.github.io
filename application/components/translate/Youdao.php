@@ -6,7 +6,7 @@
  * Time: 3:45
  */
 
-namespace app\components;
+namespace app\components\translate;
 
 
 use app\base\HttpRequest;

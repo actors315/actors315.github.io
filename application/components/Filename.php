@@ -6,10 +6,10 @@
  * Time: 11:03
  */
 
-namespace app\components\translate;
+namespace app\components;
 
 
-use app\components\Youdao;
+use app\components\translate\Youdao;
 
 class Filename
 {
