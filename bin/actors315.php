@@ -25,6 +25,8 @@ $filter = new \app\components\SFArticle();
 
 $filenameTransfer = new \app\components\Filename();
 
+$submitUrlList = [];
+
 foreach ($entryList as $entry) {
     $entry['id'] = str_replace('https://segmentfault.com/a/', '', $entry['id']);
     $entry['updated'] = strtotime($entry['updated']);
@@ -73,8 +75,11 @@ foreach ($entryList as $entry) {
         file_put_contents($tempFile, PHP_EOL, FILE_APPEND);
         $content = $filter->filterImg(trim($entry['summary']), 'blog/');
         file_put_contents($tempFile, $converter->convert($content), FILE_APPEND);
+
+        $submitUrlList[] = BLOG_DOMAIN . "/blog/markdown/".rtrim($filename,'.md');
+
     } elseif ($entry['updated'] > $list[$sign]['updated']) {
-        $tempFile = __DIR__ . "/../blog/markdown/{$list[$sign]['filename']}.md";
+        $tempFile = __DIR__ . "/../blog/markdown/{$list[$sign]['filename']}";
         $tempDesc = mb_substr(preg_replace("/<[^>]+>/", '', trim($entry['summary'])), 0, 100);
         file_put_contents($tempFile, '---  ' . PHP_EOL);
         file_put_contents($tempFile, 'layout: post  ' . PHP_EOL, FILE_APPEND);
@@ -89,6 +94,9 @@ foreach ($entryList as $entry) {
         $list[$sign]['updated'] = $entry['updated'];
         $content = $filter->filterImg(trim($entry['summary']), 'blog/');
         file_put_contents($tempFile, $converter->convert($content), FILE_APPEND);
+
+        $submitUrlList[] = BLOG_DOMAIN . "/blog/markdown/" . rtrim($list[$sign]['filename'], '.md');
+
     } elseif (empty($list[$sign]['key'])) {
         $list[$sign]['key'] = $sign;
     }
@@ -164,6 +172,8 @@ foreach ($fileList as $key => $time) {
     } else {
         file_put_contents($tempFile, $content);
     }
+
+    $submitUrlList[] = BLOG_DOMAIN . "/blog/markdown/" . rtrim($list[$sign]['filename'], '.md');
 }
 
 $totalCount = count($list);
@@ -210,6 +220,11 @@ for ($i = 1; $i <= $totalPage; $i++) {
 }
 
 file_put_contents(__DIR__ . "/../blog/files/data.json", json_encode($list));
+
+if (!empty($submitUrlList)) {
+    echo "--- 提交新增链接到百度资源 ---", PHP_EOL;
+    var_export((new \app\components\seo\baidu\Link())->submit($submitUrlList));
+}
 
 echo "done", PHP_EOL;
 

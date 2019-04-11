@@ -6,8 +6,10 @@
  * Time: 11:03
  */
 
-namespace app\components;
+namespace app\components\translate;
 
+
+use app\components\Youdao;
 
 class Filename
 {
@@ -15,7 +17,7 @@ class Filename
 
     public function __construct()
     {
-        $this->translator = new TranslateByYoudao();
+        $this->translator = new Youdao();
     }
 
     public function generateUrl($title)
@@ -29,7 +31,7 @@ class Filename
 
         if ($titleEn = $this->translator->zh2en($title)) {
             $titleEn = strtolower($titleEn);
-            $titleEn = str_replace(['&','【','】','[',']','.'], ' ', $titleEn);
+            $titleEn = str_replace(['&', '【', '】', '[', ']', '.'], ' ', $titleEn);
             $titleEn = str_replace("'", ' ', $titleEn);
             $titleEn = str_replace(",", ' ', $titleEn);
             $titleEn = preg_replace('/\s+/', ' ', $titleEn);

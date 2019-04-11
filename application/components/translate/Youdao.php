@@ -11,7 +11,7 @@ namespace app\components;
 
 use app\base\HttpRequest;
 
-class TranslateByYoudao extends HttpRequest
+class Youdao extends HttpRequest
 {
 
     const API_URL = 'https://openapi.youdao.com';
@@ -43,7 +43,7 @@ class TranslateByYoudao extends HttpRequest
             'signType' => 'v3',
             'curtime' => $nowTime,
         ];
-        $response = $this->send(self::API_URI, ['form_params' => $param], self::API_URL);
+        $response = $this->postJson(self::API_URI, ['form_params' => $param], self::API_URL);
         if (0 == $response['errorCode']) {
             return array_shift($response['translation']);
         }
