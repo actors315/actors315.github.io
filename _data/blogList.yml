@@ -1,6 +1,15 @@
+ - key: fdc6dab5df78973bbe4525b045f4c133
+   title: 【项目推荐】Guzzle - 简单易用的 PHP HTTP 客户端
+   filename: guzzle---an-easy-to-use-php-http-client
+   next: 
+      title: GDB 简介
+      filename: gdb-introduction
  - key: 743469753f7caefded3e8486d0f594a0
    title: GDB 简介
    filename: gdb-introduction
+   prev: 
+      title: 【项目推荐】Guzzle - 简单易用的 PHP HTTP 客户端
+      filename: guzzle---an-easy-to-use-php-http-client
    next: 
       title: 【php 扩展开发】扩展生成器
       filename: php-extension-development-extension-generator
