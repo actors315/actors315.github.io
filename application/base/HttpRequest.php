@@ -25,39 +25,63 @@ class HttpRequest
      */
     protected $retryWait = 1;
 
-    public function postJson($uri, $params = [], $baseUri = '')
+    /**
+     * @param $uri
+     * @param array $params
+     * @param array $options 例 ['base_uri' => 'https://graph.facebook.com/']
+     * @return mixed
+     */
+    public function getJson($uri, $params = [], $options = [])
     {
-        $content = $this->post($uri, $params, $baseUri);
-        var_dump($content);
-        return \GuzzleHttp\json_decode($content,true);
+        $content = $this->get($uri, $params, $options);
+        return \GuzzleHttp\json_decode($content, true);
     }
 
-    public function post($uri, $params = [], $baseUri = '')
+    public function get($uri, $params = [], $options = [])
     {
-        if (!empty($baseUri)) $params['options']['base_uri'] = $baseUri;
-
-        return $this->send($uri, $params, 'POST');
+        try {
+            return $this->send($uri, $params, 'GET', $options);
+        } catch (\Exception $e) {
+            return false;
+        }
     }
 
-    protected function send($uri, $param = [], $type = 'POST')
+    public function postJson($uri, $params = [], $options = [])
     {
-        $options = [
+        $content = $this->post($uri, $params, $options);
+        return \GuzzleHttp\json_decode($content, true);
+    }
+
+    public function post($uri, $params = [], $options = [])
+    {
+        try {
+            return $this->send($uri, $params, 'POST', $options);
+        } catch (\Exception $e) {
+            return false;
+        }
+    }
+
+    protected function send($uri, $params = [], $type = 'POST', $options = [])
+    {
+        $defaultOptions = [
             'connect_timeout' => 1,
             'timeout' => 3,
         ];
-        if (!empty($params['options'])) {
-            $options = array_merge($options, $params['options']);
-        }
+        $options = array_merge($defaultOptions, $options);
+
+        $defaultParams = ['verify' => false];
+        $params = array_merge($defaultParams,$params);
+        $client = new Client($options);
 
         $retries = 0;
         CONNECTION_RETRY: {
             try {
-                $client = new Client($options);
-                $param['verify'] = false;
-                $request = $client->request($type, $uri, $param);
-                return $response = $request->getBody()->getContents();
+                $request = $client->request($type, $uri, $params);
+                $response = $request->getBody();
+                return $response->getContents();
             } catch (\Exception $e) {
                 if ($retries == $this->retryLimit) {
+                    echo $e->getMessage();
                     return false;
                 }
                 usleep($this->retryWait * 1000);

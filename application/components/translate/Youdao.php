@@ -43,7 +43,7 @@ class Youdao extends HttpRequest
             'signType' => 'v3',
             'curtime' => $nowTime,
         ];
-        $response = $this->postJson(self::API_URI, ['form_params' => $param], self::API_URL);
+        $response = $this->postJson(self::API_URI, ['form_params' => $param], ['base_uri' => self::API_URL]);
         if (0 == $response['errorCode']) {
             return array_shift($response['translation']);
         }
