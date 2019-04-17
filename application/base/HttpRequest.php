@@ -28,6 +28,7 @@ class HttpRequest
     public function postJson($uri, $params = [], $baseUri = '')
     {
         $content = $this->post($uri, $params, $baseUri);
+        var_dump($content);
         return \GuzzleHttp\json_decode($content,true);
     }
 
