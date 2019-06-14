@@ -7,6 +7,7 @@
 同步自segmentfault(https://segmentfault.com/blog/actors315)  
 
 ## 目录  
+- [Centos iptables-config 配置参数说明](/blog/markdown/centos-iptables-config-configuration-parameters.md)
 - [【项目推荐】Guzzle - 简单易用的 PHP HTTP 客户端](/blog/markdown/guzzle---an-easy-to-use-php-http-client.md)
 - [GDB 简介](/blog/markdown/gdb-introduction.md)
 - [【php 扩展开发】扩展生成器](/blog/markdown/php-extension-development-extension-generator.md)
@@ -26,7 +27,6 @@
 - [【nginx】记录nginx+php-fpm实现大文件下载排坑的过程](/blog/markdown/nginx-records-the-nginx+php-fpm-implementation-of-large-file-download-pit-process.md)
 - [【Composer】如何创建并发布一个自己的包](/blog/markdown/how-to-create-and-publish-a-package-of-your-own.md)
 - [【Composer】简单介绍](/blog/markdown/composer-is-briefly-introduced.md)
-- [【微信小程序】根据当前运行环境调用不同的接口地址的一些方法](/blog/markdown/wechat-applet-calls-a-number-of-methods-with-different-interface-addresses-based-on-the-current-operating-environment.md)
 
 
 ## 心情随笔  
