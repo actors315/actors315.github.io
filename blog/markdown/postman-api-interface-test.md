@@ -80,11 +80,13 @@ pm.variables.set(); // 本地变量
 
 同时还提供了三个动态变量
 
+{% raw %}
 ```
 {{$guid}} //添加v4风格的guid
 {{$timestamp}} //添加当前时间戳
 {{$randomInt}} //添加0到1000之间的随机整数
 ```
+{% endraw %}
 
 **循环和分支**
 
