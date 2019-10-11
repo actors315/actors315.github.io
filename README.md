@@ -7,6 +7,7 @@
 同步自segmentfault(https://segmentfault.com/blog/actors315)  
 
 ## 目录  
+- [代码优化随想](/blog/markdown/code-optimization-whim.md)
 - [【Postman】API 接口测试](/blog/markdown/postman-api-interface-test.md)
 - [Centos iptables-config 配置参数说明](/blog/markdown/centos-iptables-config-configuration-parameters.md)
 - [【项目推荐】Guzzle - 简单易用的 PHP HTTP 客户端](/blog/markdown/guzzle---an-easy-to-use-php-http-client.md)
@@ -26,7 +27,6 @@
 - [【PHP高级特性】ArrayAccess 接口](/blog/markdown/advanced-features-of-php-arrayaccess-interface.md)
 - [通过唯一ID实现简单的日志跟踪实现](/blog/markdown/a-simple-log-trace-implementation-with-a-unique-id.md)
 - [【nginx】记录nginx+php-fpm实现大文件下载排坑的过程](/blog/markdown/nginx-records-the-nginx+php-fpm-implementation-of-large-file-download-pit-process.md)
-- [【Composer】如何创建并发布一个自己的包](/blog/markdown/how-to-create-and-publish-a-package-of-your-own.md)
 
 
 ## 心情随笔  

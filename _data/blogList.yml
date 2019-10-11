@@ -1,6 +1,15 @@
+ - key: a009d3ead44eacfc71cd25363bc368af
+   title: 代码优化随想
+   filename: code-optimization-whim
+   next: 
+      title: 【Postman】API 接口测试
+      filename: postman-api-interface-test
  - key: 10bbf2ec46162d90771764bd16a9422c
    title: 【Postman】API 接口测试
    filename: postman-api-interface-test
+   prev: 
+      title: 代码优化随想
+      filename: code-optimization-whim
    next: 
       title: Centos iptables-config 配置参数说明
       filename: centos-iptables-config-configuration-parameters
