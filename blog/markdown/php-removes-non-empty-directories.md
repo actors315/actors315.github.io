@@ -44,7 +44,6 @@ class ClearFile
             if ($dir === $scan || $scan === false) {
                 $dirList[] = $path;
             } elseif (is_dir($path)) {
-                $temp = realpath($rootPath . DIRECTORY_SEPARATOR . $dir);
                 $dirList = array_merge($dirList, $this->scanDir($path . DIRECTORY_SEPARATOR, $scan));
             }
         }
