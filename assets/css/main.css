@@ -331,6 +331,14 @@ img::-moz-selection {
   background-size: 15px;
 }
 
+.footer-social-icon img {
+  display: none;
+}
+
+.footer-social-icon:hover img {
+  display: block;
+}
+
 /*pager end----------------*/
 
   .date,

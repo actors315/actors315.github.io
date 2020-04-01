@@ -6,9 +6,17 @@
 
                     {% for item in site.contact %}
                     <li class="navigation__item_social">
+                        {% if item.url %}
                         <a href="{{item.url}}" title="{{item.title}}" target="_blank">
                             <div class="footer-social-icon" style="background:url({{item.icon}});"></div>
                         </a>
+                        {% endif %}
+
+                        {% if !item.url and item.hover %}
+                        <div class="footer-social-icon" style="background:url({{item.icon}});">
+                            <img src="{{item.hover}}" alt="{{item.title}}" >
+                        </div>
+                        {% endif %}
                     </li>
                     {% endfor %}
 
