@@ -45,5 +45,5 @@ after_success:
   - git commit -m "[skip travis] auto build by travis-ci"
   - git push origin master
   # 同步到coding.net
-  - git push https://xiehuanjin:$CODING_NET_TOKEN@git.dev.tencent.com/xiehuanjin/actors315.github.io.git --all
+  - git push https://NbzPRTcotT:$CODING_NET_TOKEN@e.coding.net/xiehuanjin/actors315.github.io.git --all
 
