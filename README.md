@@ -13,6 +13,7 @@
 - [Centos iptables-config 配置参数说明](/blog/markdown/centos-iptables-config-configuration-parameters.md)
 - [【项目推荐】Guzzle - 简单易用的 PHP HTTP 客户端](/blog/markdown/guzzle---an-easy-to-use-php-http-client.md)
 - [GDB 简介](/blog/markdown/gdb-introduction.md)
+- [【PHP 扩展开发】扩展生成器](/blog/markdown/php-extension-development-extension-generator1.md)
 - [【php 扩展开发】扩展生成器](/blog/markdown/php-extension-development-extension-generator.md)
 - [【PHP 扩展开发】Hello World](/blog/markdown/hello-world-hello-world.md)
 - [【PHP 扩展开发】Zephir 基础篇](/blog/markdown/php-extension-development-zephir-basic-article.md)
@@ -23,10 +24,9 @@
 - [PHP实现一个轻量级容器](/blog/markdown/php-implements-a-lightweight-container.md)
 - [Travis CI 实现自动备份Segmentfault文章到Github](/blog/markdown/travis-ci-implements-automatic-backup-of-segmentfault-articles-to-github.md)
 - [Travis CI 简介](/blog/markdown/travis-ci-introduction.md)
+- [【PHP 实现数据结构】链式队列](/blog/markdown/php-implements-data-structure-chain-queue.md)
 - [【php实现数据结构】链式队列](/blog/markdown/php-implementation-data-structure-chain-queue.md)
-- [【php实现数据结构】单向链表](/blog/markdown/php-implementation-data-structure-one-way-linked-list.md)
-- [【PHP高级特性】ArrayAccess 接口](/blog/markdown/advanced-features-of-php-arrayaccess-interface.md)
-- [通过唯一ID实现简单的日志跟踪实现](/blog/markdown/a-simple-log-trace-implementation-with-a-unique-id.md)
+- [【PHP 实现数据结构】单向链表](/blog/markdown/php-implements-data-structure-one-way-linked-list.md)
 
 
 ## 心情随笔  

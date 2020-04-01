@@ -47,14 +47,23 @@
       title: 【项目推荐】Guzzle - 简单易用的 PHP HTTP 客户端
       filename: guzzle---an-easy-to-use-php-http-client
    next: 
+      title: 【PHP 扩展开发】扩展生成器
+      filename: php-extension-development-extension-generator1
+ - key: 4a1124ab8dacfb81c9aa0cb3a45babc3
+   title: 【PHP 扩展开发】扩展生成器
+   filename: php-extension-development-extension-generator1
+   prev: 
+      title: GDB 简介
+      filename: gdb-introduction
+   next: 
       title: 【php 扩展开发】扩展生成器
       filename: php-extension-development-extension-generator
  - key: c238a6358cdd7a656dd58325229f27d0
    title: 【php 扩展开发】扩展生成器
    filename: php-extension-development-extension-generator
    prev: 
-      title: GDB 简介
-      filename: gdb-introduction
+      title: 【PHP 扩展开发】扩展生成器
+      filename: php-extension-development-extension-generator1
    next: 
       title: 【PHP 扩展开发】Hello World
       filename: hello-world-hello-world
@@ -137,14 +146,32 @@
       title: Travis CI 实现自动备份Segmentfault文章到Github
       filename: travis-ci-implements-automatic-backup-of-segmentfault-articles-to-github
    next: 
+      title: 【PHP 实现数据结构】链式队列
+      filename: php-implements-data-structure-chain-queue
+ - key: 7a67c6423056d901751f0a8891402f1c
+   title: 【PHP 实现数据结构】链式队列
+   filename: php-implements-data-structure-chain-queue
+   prev: 
+      title: Travis CI 简介
+      filename: travis-ci-introduction
+   next: 
       title: 【php实现数据结构】链式队列
       filename: php-implementation-data-structure-chain-queue
  - key: 5eb178cd5e9a7a20cb97f00991d06262
    title: 【php实现数据结构】链式队列
    filename: php-implementation-data-structure-chain-queue
    prev: 
-      title: Travis CI 简介
-      filename: travis-ci-introduction
+      title: 【PHP 实现数据结构】链式队列
+      filename: php-implements-data-structure-chain-queue
+   next: 
+      title: 【PHP 实现数据结构】单向链表
+      filename: php-implements-data-structure-one-way-linked-list
+ - key: 8a5f55ef18fe2c051ed201065eef02cf
+   title: 【PHP 实现数据结构】单向链表
+   filename: php-implements-data-structure-one-way-linked-list
+   prev: 
+      title: 【php实现数据结构】链式队列
+      filename: php-implementation-data-structure-chain-queue
    next: 
       title: 【php实现数据结构】单向链表
       filename: php-implementation-data-structure-one-way-linked-list
@@ -152,8 +179,17 @@
    title: 【php实现数据结构】单向链表
    filename: php-implementation-data-structure-one-way-linked-list
    prev: 
-      title: 【php实现数据结构】链式队列
-      filename: php-implementation-data-structure-chain-queue
+      title: 【PHP 实现数据结构】单向链表
+      filename: php-implements-data-structure-one-way-linked-list
+   next: 
+      title: 【PHP 高级特性】ArrayAccess 接口
+      filename: advanced-features-of-php-arrayaccess-interface1
+ - key: 0afaa1910bf18352f362c898a55fd90f
+   title: 【PHP 高级特性】ArrayAccess 接口
+   filename: advanced-features-of-php-arrayaccess-interface1
+   prev: 
+      title: 【php实现数据结构】单向链表
+      filename: php-implementation-data-structure-one-way-linked-list
    next: 
       title: 【PHP高级特性】ArrayAccess 接口
       filename: advanced-features-of-php-arrayaccess-interface
@@ -161,8 +197,8 @@
    title: 【PHP高级特性】ArrayAccess 接口
    filename: advanced-features-of-php-arrayaccess-interface
    prev: 
-      title: 【php实现数据结构】单向链表
-      filename: php-implementation-data-structure-one-way-linked-list
+      title: 【PHP 高级特性】ArrayAccess 接口
+      filename: advanced-features-of-php-arrayaccess-interface1
    next: 
       title: 通过唯一ID实现简单的日志跟踪实现
       filename: a-simple-log-trace-implementation-with-a-unique-id
@@ -209,14 +245,32 @@
       title: 【Composer】简单介绍
       filename: composer-is-briefly-introduced
    next: 
+      title: 【PHP 实现设计模式】之单例模式
+      filename: the-singleton-pattern-of-php-implementation-design-pattern
+ - key: e18609f492bc3d552ba44395e9de6df4
+   title: 【PHP 实现设计模式】之单例模式
+   filename: the-singleton-pattern-of-php-implementation-design-pattern
+   prev: 
+      title: 【微信小程序】根据当前运行环境调用不同的接口地址的一些方法
+      filename: wechat-applet-calls-a-number-of-methods-with-different-interface-addresses-based-on-the-current-operating-environment
+   next: 
       title: 【php实现设计模式】之单例模式
       filename: php-implementation-design-pattern-singleton-pattern
  - key: af002f0cd867463d1796c118e6aa0447
    title: 【php实现设计模式】之单例模式
    filename: php-implementation-design-pattern-singleton-pattern
    prev: 
-      title: 【微信小程序】根据当前运行环境调用不同的接口地址的一些方法
-      filename: wechat-applet-calls-a-number-of-methods-with-different-interface-addresses-based-on-the-current-operating-environment
+      title: 【PHP 实现设计模式】之单例模式
+      filename: the-singleton-pattern-of-php-implementation-design-pattern
+   next: 
+      title: 【PHP 高级特性】之反射
+      filename: php-advanced-features-reflection
+ - key: 563398937d4e611da8a328be798fa7de
+   title: 【PHP 高级特性】之反射
+   filename: php-advanced-features-reflection
+   prev: 
+      title: 【php实现设计模式】之单例模式
+      filename: php-implementation-design-pattern-singleton-pattern
    next: 
       title: 【PHP高级特性】之反射
       filename: reflection-of-php-advanced-features
@@ -224,8 +278,17 @@
    title: 【PHP高级特性】之反射
    filename: reflection-of-php-advanced-features
    prev: 
-      title: 【php实现设计模式】之单例模式
-      filename: php-implementation-design-pattern-singleton-pattern
+      title: 【PHP 高级特性】之反射
+      filename: php-advanced-features-reflection
+   next: 
+      title: 【PHP 实现设计模式】之服务定位器模式
+      filename: php-implementation-design-pattern-service-locator-pattern1
+ - key: 8d96b68a56c1151edd3868674e788b11
+   title: 【PHP 实现设计模式】之服务定位器模式
+   filename: php-implementation-design-pattern-service-locator-pattern1
+   prev: 
+      title: 【PHP高级特性】之反射
+      filename: reflection-of-php-advanced-features
    next: 
       title: 【php实现设计模式】之服务定位器模式
       filename: php-implementation-design-pattern-service-locator-pattern
@@ -233,5 +296,5 @@
    title: 【php实现设计模式】之服务定位器模式
    filename: php-implementation-design-pattern-service-locator-pattern
    prev: 
-      title: 【PHP高级特性】之反射
-      filename: reflection-of-php-advanced-features
+      title: 【PHP 实现设计模式】之服务定位器模式
+      filename: php-implementation-design-pattern-service-locator-pattern1
