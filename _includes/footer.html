@@ -13,9 +13,11 @@
                         {% endif %}
 
                         {% if !item.url and item.hover %}
-                        <div class="footer-social-icon" style="background:url({{item.icon}});">
-                            <img src="{{item.hover}}" alt="{{item.title}}" >
-                        </div>
+                        <a>
+                            <div class="footer-social-icon" style="background:url({{item.icon}});">
+                                <img src="{{item.hover}}" alt="{{item.title}}" >
+                            </div>
+                        </a>
                         {% endif %}
                     </li>
                     {% endfor %}
