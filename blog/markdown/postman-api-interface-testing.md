@@ -8,6 +8,8 @@ Postman 提供了一个强大的基于 Nodejs 的运行环境，允许开发人�
 key: 10bbf2ec46162d90771764bd16a9422c  
 ---  
 
+{% raw %}
+
 **Script**
 
 Postman 提供了一个强大的基于 Nodejs 的运行环境，允许开发人员在请求或集合中填加动态行为，如编写测试用例，动态参数，请求之前传递数据等。Postman 提供了两个事件来填加 Javascript 代码来实现特定行为。分别为  
@@ -104,3 +106,5 @@ postman.setNextRequest(null) //这个表示结束执行流程
 
 断言脚本语法：<https://www.chaijs.com/api/bdd/>  
 JSON Scheme 自动生成：<https://www.jsonschema.net/>
+
+{% endraw %}
