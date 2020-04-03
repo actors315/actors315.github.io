@@ -7,6 +7,7 @@
 同步自segmentfault(https://segmentfault.com/blog/actors315)  
 
 ## 目录  
+- [【Postman】pm.response.headers 对象探究](/blog/markdown/postman-pm-responder-headers-object-to-explore.md)
 - [PHP 删除非空目录](/blog/markdown/php-removes-non-empty-directories.md)
 - [代码优化随想](/blog/markdown/code-optimization-thoughts.md)
 - [【Postman】API 接口测试](/blog/markdown/postman-api-interface-testing.md)
@@ -26,7 +27,6 @@
 - [【PHP 实现数据结构】单向链表](/blog/markdown/php-implements-data-structure-one-way-linked-list.md)
 - [【PHP 高级特性】ArrayAccess 接口](/blog/markdown/advanced-features-of-php-arrayaccess-interface.md)
 - [通过唯一ID实现简单的日志跟踪实现](/blog/markdown/a-simple-log-trace-implementation-with-a-unique-id.md)
-- [【nginx】记录nginx+php-fpm实现大文件下载排坑的过程](/blog/markdown/nginx-records-the-process-of-large-file-download-and-drainage-by-nginx+php-fpm.md)
 
 
 ## 心情随笔  
