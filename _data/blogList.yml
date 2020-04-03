@@ -1,15 +1,6 @@
- - key: e133edca251a04314750f6cc6872c53a
-   title: 【Postman】pm.response.headers 对象探究
-   filename: postman-pm-responder-headers-object-to-explore
-   next: 
-      title: PHP 删除非空目录
-      filename: php-removes-non-empty-directories
  - key: f5c0b81225daa48f91c3fa53ff433d9f
    title: PHP 删除非空目录
    filename: php-removes-non-empty-directories
-   prev: 
-      title: 【Postman】pm.response.headers 对象探究
-      filename: postman-pm-responder-headers-object-to-explore
    next: 
       title: 代码优化随想
       filename: code-optimization-thoughts
