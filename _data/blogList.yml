@@ -1,6 +1,15 @@
+ - key: b970ecacc80a1f4069e6a3bd841218c9
+   title: 【PHP 实现数据结构】栈
+   filename: php-implementation-data-structure-stack
+   next: 
+      title: 【Postman】pm.response.headers 对象探究
+      filename: postman-pm-responder-headers-object-to-explore
  - key: e133edca251a04314750f6cc6872c53a
    title: 【Postman】pm.response.headers 对象探究
    filename: postman-pm-responder-headers-object-to-explore
+   prev: 
+      title: 【PHP 实现数据结构】栈
+      filename: php-implementation-data-structure-stack
    next: 
       title: PHP 删除非空目录
       filename: php-removes-non-empty-directories
