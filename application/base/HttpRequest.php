@@ -9,6 +9,7 @@
 namespace app\base;
 
 
+use Exception;
 use GuzzleHttp\Client;
 
 class HttpRequest
@@ -39,11 +40,7 @@ class HttpRequest
 
     public function get($uri, $params = [], $options = [])
     {
-        try {
-            return $this->send($uri, $params, 'GET', $options);
-        } catch (\Exception $e) {
-            return false;
-        }
+        return $this->send($uri, $params, 'GET', $options);
     }
 
     public function postJson($uri, $params = [], $options = [])
@@ -54,13 +51,17 @@ class HttpRequest
 
     public function post($uri, $params = [], $options = [])
     {
-        try {
-            return $this->send($uri, $params, 'POST', $options);
-        } catch (\Exception $e) {
-            return false;
-        }
+        return $this->send($uri, $params, 'POST', $options);
     }
 
+    /**
+     * @param $uri
+     * @param array $params
+     * @param string $type
+     * @param array $options
+     * @return string
+     * @throws Exception
+     */
     protected function send($uri, $params = [], $type = 'POST', $options = [])
     {
         $defaultOptions = [
@@ -79,10 +80,9 @@ class HttpRequest
                 $request = $client->request($type, $uri, $params);
                 $response = $request->getBody();
                 return $response->getContents();
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
                 if ($retries == $this->retryLimit) {
-                    echo $e->getMessage();
-                    return false;
+                    throw new Exception($e);
                 }
                 usleep($this->retryWait * 1000);
                 ++$retries;

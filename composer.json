@@ -4,7 +4,8 @@
   "require": {
     "league/html-to-markdown": "^4.8",
     "guzzlehttp/guzzle": "^6.3",
-    "phpmailer/phpmailer": "^6.1"
+    "phpmailer/phpmailer": "^6.1",
+    "twinkle/di": "^1.0"
   },
   "require-dev": {
 
