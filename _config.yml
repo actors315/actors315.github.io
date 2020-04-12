@@ -30,7 +30,7 @@ repositories:
   - {'title': 'lingyin/ethereum-address',description: '简单较验ETH地址的合法性',url: 'https://github.com/actors315/ethereum-address'}
   - {'title': 'twinkle/apollo-client',description: '简单易用的apollo客户端，包含客户端，配置读取，Open Api',url: 'https://github.com/TwinklePHP/ApolloClient'}
 
-exclude: ["application","bin","vendor","blog/page.html"]
+exclude: ["application","data-structures","bin","vendor","blog/page.html"]
 
 url: "https://blog.xiehuanjin.cn"
 plugins: [jekyll-paginate,jekyll-sitemap]
