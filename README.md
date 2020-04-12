@@ -7,6 +7,7 @@
 同步自segmentfault(https://segmentfault.com/blog/actors315)  
 
 ## 目录  
+- [【PHP 实现数据结构】二叉查找树](/blog/markdown/php-implementation-of-data-structure-binary-search-tree.md)
 - [【PHP 实现数据结构】栈](/blog/markdown/php-implementation-data-structure-stack.md)
 - [【Postman】pm.response.headers 对象探究](/blog/markdown/postman-pm-responder-headers-object-to-explore.md)
 - [PHP 删除非空目录](/blog/markdown/php-removes-non-empty-directories.md)
@@ -26,7 +27,6 @@
 - [Travis CI 简介](/blog/markdown/travis-ci-introduction.md)
 - [【PHP 实现数据结构】链式队列](/blog/markdown/php-implements-data-structure-chain-queue.md)
 - [【PHP 实现数据结构】单向链表](/blog/markdown/php-implements-data-structure-one-way-linked-list.md)
-- [【PHP 高级特性】ArrayAccess 接口](/blog/markdown/advanced-features-of-php-arrayaccess-interface.md)
 
 
 ## 心情随笔  

@@ -1,6 +1,15 @@
+ - key: 4f25508f2c0a0ced247bcc3f93c22c0a
+   title: 【PHP 实现数据结构】二叉查找树
+   filename: php-implementation-of-data-structure-binary-search-tree
+   next: 
+      title: 【PHP 实现数据结构】栈
+      filename: php-implementation-data-structure-stack
  - key: b970ecacc80a1f4069e6a3bd841218c9
    title: 【PHP 实现数据结构】栈
    filename: php-implementation-data-structure-stack
+   prev: 
+      title: 【PHP 实现数据结构】二叉查找树
+      filename: php-implementation-of-data-structure-binary-search-tree
    next: 
       title: 【Postman】pm.response.headers 对象探究
       filename: postman-pm-responder-headers-object-to-explore
