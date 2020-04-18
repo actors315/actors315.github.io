@@ -51,9 +51,10 @@ class BinarySortTree
      */
     public $root;
 
-    public function insert($data) {
+    public function insert($data)
+    {
         $node = new Node($data);
-        if(null == $this->root) {
+        if (null == $this->root) {
             $this->root = $node;
             return;
         }
@@ -63,16 +64,30 @@ class BinarySortTree
             $parent = $current;
             if ($node->data < $current->data) {
                 $current = $parent->left;
-                if(null == $current) {
+                if (null == $current) {
                     $parent->setLeft($node);
                 }
             } else {
                 $current = $current->right;
-                if(null == $current) {
+                if (null == $current) {
                     $parent->setRight($node);
                 }
             }
         } while ($current);
+    }
+
+    public function inOrder()
+    {
+        $stack = array();
+        $current = $this->root;
+        while (!empty($stack) || $current != null) {
+            while ($current != null) {
+                array_push($stack, $current->data);
+                $current = $current->left;
+            }
+            $current = array_pop($stack);
+            $current = $current->right;
+        }
     }
 }
 
@@ -84,3 +99,4 @@ $bst->insert(37);
 $bst->insert(3);
 $bst->insert(99);
 $bst->insert(22);
+$bst->inOrder();
