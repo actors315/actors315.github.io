@@ -80,14 +80,18 @@ class BinarySortTree
     {
         $stack = array();
         $current = $this->root;
+        $sort = [];
         while (!empty($stack) || $current != null) {
             while ($current != null) {
-                array_push($stack, $current->data);
+                array_push($stack, $current);
                 $current = $current->left;
             }
             $current = array_pop($stack);
+            $sort[] = $current->data;
             $current = $current->right;
         }
+
+        return $sort;
     }
 }
 
@@ -99,4 +103,4 @@ $bst->insert(37);
 $bst->insert(3);
 $bst->insert(99);
 $bst->insert(22);
-$bst->inOrder();
+print_r($bst->inOrder());
