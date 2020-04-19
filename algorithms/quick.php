@@ -1,6 +1,5 @@
 <?php
 
-
 function quickSort($arr)
 {
     $borderStack[] = [0, count($arr) - 1]; //数组边界
