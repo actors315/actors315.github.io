@@ -76,22 +76,78 @@ class BinarySortTree
         } while ($current);
     }
 
+    public function preOrder()
+    {
+        $stack = [];
+
+        // 先访问根结点
+        $current = $this->root;
+        $pre = [];
+
+        while (!empty($stack) || $current != null) {
+
+            // 访问左子树
+            while ($current != null) {
+                $pre[] = $current->data;
+                $stack[] = $current;
+                $current = $current->left;
+            }
+            $current = array_pop($stack);
+
+            // 访问右子树
+            $current = $current->right;
+        }
+
+        return $pre;
+    }
+
     public function inOrder()
     {
-        $stack = array();
+        $stack = [];
+
+        // 先访问根结点
         $current = $this->root;
         $sort = [];
         while (!empty($stack) || $current != null) {
+
+            // 访问左子树
             while ($current != null) {
-                array_push($stack, $current);
+                $stack[] = $current;
                 $current = $current->left;
             }
             $current = array_pop($stack);
             $sort[] = $current->data;
+
+            // 访问右子树
             $current = $current->right;
         }
 
         return $sort;
+    }
+
+    public function postOrder()
+    {
+        $stack = [];
+        $visitStack = [];
+        $current = $this->root;
+        while ($current != null) {
+            $visitStack[] = $current;
+            if ($current->left != null) {
+                $stack[] = $current->left;
+            }
+            if ($current->right != null) {
+                $stack[] = $current->right;
+            }
+
+            $current = array_pop($stack);
+        }
+
+        $next = [];
+        while ($current = array_pop($visitStack)) {
+            $next[] = $current->data;
+        }
+
+        return $next;
     }
 }
 
@@ -103,4 +159,12 @@ $bst->insert(37);
 $bst->insert(3);
 $bst->insert(99);
 $bst->insert(22);
-print_r($bst->inOrder());
+
+$arr = $bst->preOrder();
+echo "pre order: ",implode(' ',$arr),PHP_EOL;
+
+$arr = $bst->inOrder();
+echo "in order: ",implode(' ',$arr),PHP_EOL;
+
+$arr = $bst->postOrder();
+echo "post order: ",implode(' ',$arr),PHP_EOL;
