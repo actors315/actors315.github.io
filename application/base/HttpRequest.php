@@ -11,6 +11,7 @@ namespace app\base;
 
 use Exception;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 
 class HttpRequest
 {
@@ -24,7 +25,7 @@ class HttpRequest
      * 重试等待秒数
      * @var int
      */
-    protected $retryWait = 1;
+    protected $retryWait = 0.5;
 
     /**
      * @param $uri
@@ -61,6 +62,7 @@ class HttpRequest
      * @param array $options
      * @return string
      * @throws Exception
+     * @throws GuzzleException
      */
     protected function send($uri, $params = [], $type = 'POST', $options = [])
     {
@@ -84,7 +86,7 @@ class HttpRequest
                 if ($retries == $this->retryLimit) {
                     throw new Exception($e);
                 }
-                usleep($this->retryWait * 1000);
+                usleep($this->retryWait * 1000000);
                 ++$retries;
                 goto CONNECTION_RETRY;
             }

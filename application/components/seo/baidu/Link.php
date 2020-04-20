@@ -26,7 +26,10 @@ class Link extends HttpRequest
     {
         $url = self::SUBMIT_URL . BAIDU_TOKEN;
 
-        return $this->postJson($url, ['body' => implode("\n", $urlList)]);
+        return $this->postJson($url, ['body' => implode("\n", $urlList)],[
+            'connect_timeout' => 5,
+            'timeout' => 5,
+        ]);
     }
 
 }
