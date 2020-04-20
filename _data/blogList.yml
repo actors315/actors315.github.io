@@ -1,6 +1,15 @@
+ - key: 765ae81d177306dcc7c7e3448896a70f
+   title: 【PHP 实现数据结构】遍历二叉查找树
+   filename: php-implements-data-structure-traversing-binary-search-tree
+   next: 
+      title: 【PHP 实现数据结构】二叉查找树
+      filename: php-implementation-of-data-structure-binary-search-tree
  - key: 4f25508f2c0a0ced247bcc3f93c22c0a
    title: 【PHP 实现数据结构】二叉查找树
    filename: php-implementation-of-data-structure-binary-search-tree
+   prev: 
+      title: 【PHP 实现数据结构】遍历二叉查找树
+      filename: php-implements-data-structure-traversing-binary-search-tree
    next: 
       title: 【PHP 实现数据结构】栈
       filename: php-implementation-data-structure-stack
