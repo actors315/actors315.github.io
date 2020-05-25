@@ -29,6 +29,7 @@ repositories:
   - {'title': 'twinkle/di',description: '基于 PSR-11 的简单DI实现',url: 'https://github.com/actors315/DI'}
   - {'title': 'lingyin/ethereum-address',description: '简单较验ETH地址的合法性',url: 'https://github.com/actors315/ethereum-address'}
   - {'title': 'twinkle/apollo-client',description: '简单易用的apollo客户端，包含客户端，配置读取，Open Api',url: 'https://github.com/TwinklePHP/ApolloClient'}
+  - {'title': 'sso',description: '微信扫码关注公众号并登录网站',url: 'https://github.com/LingyinTech/sso'}
 
 exclude: ["algorithms","application","data-structures","bin","vendor","blog/page.html"]
 
