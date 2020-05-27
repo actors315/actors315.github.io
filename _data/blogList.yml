@@ -1,6 +1,15 @@
+ - key: 18049fe2ca63bbe3c0c4629d4bb99b45
+   title: 【docker】构建ssh+nginx+fpm镜像并通过supervisor实现开机自启动
+   filename: docker-build-ssh-+nginx+-fpm-image-and-realize-booting-through-supervisor
+   next: 
+      title: 【PHP 实现数据结构】遍历二叉查找树
+      filename: php-implements-data-structure-traversing-binary-search-tree
  - key: 765ae81d177306dcc7c7e3448896a70f
    title: 【PHP 实现数据结构】遍历二叉查找树
    filename: php-implements-data-structure-traversing-binary-search-tree
+   prev: 
+      title: 【docker】构建ssh+nginx+fpm镜像并通过supervisor实现开机自启动
+      filename: docker-build-ssh-+nginx+-fpm-image-and-realize-booting-through-supervisor
    next: 
       title: 【PHP 实现数据结构】二叉查找树
       filename: php-implementation-of-data-structure-binary-search-tree
