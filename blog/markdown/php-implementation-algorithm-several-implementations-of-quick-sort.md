@@ -62,11 +62,18 @@ function quickSort(&$arr, $start, $end)
     while ($smaller <= $bigger) {
 
         // 如果更小，就呆在左边
-        if ($arr[$smaller] <= $arr[$middle]) {
+        if ($arr[$smaller] < $arr[$middle]) {
             if ($smaller > $middle) {
                 list($arr[$smaller], $arr[$middle]) = [$arr[$middle], $arr[$smaller]];
                 $middle = $smaller;
             }
+            $smaller++;
+            continue;
+        }
+
+        // 重复元素
+        if ($arr[$smaller] == $arr[$middle]) {
+            $middle = $smaller;
             $smaller++;
             continue;
         }
@@ -84,14 +91,12 @@ function quickSort(&$arr, $start, $end)
         $bigger--;
     }
 
-    quickSort($arr, $start, $smaller - 1);
+    quickSort($arr, $start, $middle - 1);
     quickSort($arr, $bigger + 1, $end);
 }
 ```
 
 可以看出，该方法并没有申请新的临时数组，空间复杂度为 O(1)，但是该方法效率不如方法一，测试结果执行时间恒定为方法一的接近2倍，显然不够好。仔细查看执行流程，发现有时会把右侧大于基准值的元素也交换到左侧，然后再交换回去，冗余操作。
-
-另该方案还有一个BUG，如果待排序数组存在重复元素，它显然无法完成工作。
 
 方法三，还是采用元素交换的方式，但每次交换都只把左则大于基准值的元素与右侧小于基准值的元素进行交换。
 

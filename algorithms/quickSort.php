@@ -17,11 +17,18 @@ function quickSort(&$arr, $start, $end)
     while ($smaller <= $bigger) {
 
         // 如果更小，就呆在左边
-        if ($arr[$smaller] <= $arr[$middle]) {
+        if ($arr[$smaller] < $arr[$middle]) {
             if ($smaller > $middle) {
                 list($arr[$smaller], $arr[$middle]) = [$arr[$middle], $arr[$smaller]];
                 $middle = $smaller;
             }
+            $smaller++;
+            continue;
+        }
+
+        // 重复元素
+        if ($arr[$smaller] == $arr[$middle]) {
+            $middle = $smaller;
             $smaller++;
             continue;
         }
@@ -39,7 +46,7 @@ function quickSort(&$arr, $start, $end)
         $bigger--;
     }
 
-    quickSort($arr, $start, $smaller - 1);
+    quickSort($arr, $start, $middle - 1);
     quickSort($arr, $bigger + 1, $end);
 }
 
@@ -127,11 +134,18 @@ function quickSortStack(&$arr, $start, $end)
     }
 }
 
-$arr = range(1, 1000000);
+$arr = range(1, 100000);
+$arr[] = 1;
+$arr[] = 1;
+$arr[] = 3;
+$arr[] = 3;
+$arr[] = 3;
+$arr[] = 3;
+$arr[] = 10;
+sort($arr);
 $sortArr = $arr;
 shuffle($arr);
 $tempArr1 = $tempArr2 = $tempArr3 = $arr;
-
 
 echo '---------quickSortByTempArr-----------', PHP_EOL;
 $startTime = microtime(true);
@@ -139,7 +153,6 @@ quickSortByTempArr($arr);
 $endTime = microtime(true);
 echo 'sort -- ', $sortArr == $arr, PHP_EOL;
 echo 'total time', $endTime - $startTime, PHP_EOL;
-
 
 echo '---------quickSort-----------', PHP_EOL;
 $startTime = microtime(true);
