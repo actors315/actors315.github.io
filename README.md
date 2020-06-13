@@ -7,6 +7,7 @@
 同步自segmentfault(https://segmentfault.com/blog/actors315)  
 
 ## 目录  
+- [【PHP 实现算法】快速排序的几种实现](/blog/markdown/php-implementation-algorithm-several-implementations-of-quick-sort.md)
 - [【docker】构建ssh+nginx+fpm镜像并通过supervisor实现开机自启动](/blog/markdown/docker-build-ssh-+nginx+-fpm-image-and-realize-booting-through-supervisor.md)
 - [【PHP 实现数据结构】遍历二叉查找树](/blog/markdown/php-implements-data-structure-traversing-binary-search-tree.md)
 - [【PHP 实现数据结构】二叉查找树](/blog/markdown/php-implementation-of-data-structure-binary-search-tree.md)
@@ -26,7 +27,6 @@
 - [【Github Pages】徒手实现分页](/blog/markdown/github-pages-paging-by-hand.md)
 - [PHP实现一个轻量级容器](/blog/markdown/php-implements-a-lightweight-container.md)
 - [Travis CI 实现自动备份Segmentfault文章到Github](/blog/markdown/travis-ci-implements-automatic-backup-of-segmentfault-articles-to-github.md)
-- [Travis CI 简介](/blog/markdown/travis-ci-introduction.md)
 
 
 ## 心情随笔  
